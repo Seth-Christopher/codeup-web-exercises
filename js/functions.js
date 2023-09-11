@@ -104,7 +104,7 @@ function applyDiscount (priceBeforeDiscount, discountPercentage) {
     discountPercentage =  Math.random();
     let totalDiscount = discountPercentage * priceBeforeDiscount;
     let totalAfterDiscountApplied = priceBeforeDiscount - totalDiscount; {
-        return alert(`With a random tip percentage of ${discountPercentage.toFixed(2)}, subtracted from your original price of ${priceBeforeDiscount}. You would have to pay ${totalAfterDiscountApplied.toFixed(2)}.`);{
+        return alert(`With a random discount percent of ${discountPercentage.toFixed(2)}, subtracted from your original price of ${priceBeforeDiscount}. You would have to pay ${totalAfterDiscountApplied.toFixed(2)}.`);{
         }
     }
 }
