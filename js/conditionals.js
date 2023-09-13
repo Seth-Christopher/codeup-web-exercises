@@ -12,6 +12,9 @@
 //  *  > analyzeColor('cyan') // returns "I don't know anything about cyan"
 //      You should use an if-else-if-else block to return different messages.
 
+
+
+
 function analyzeColor (color) {
     color = prompt("Give me random color.");
     switch(color) {
@@ -68,42 +71,44 @@ console.log(analyzeColor(randomColor));
 
 // ********* COMPLETED , AND ADDED TO THE FUNCTION ABOVE *****************
 
-
-//  * TODO:
-//  * Suppose there's a promotion in Walmart, each customer is given a randomly
-//  * generated "lucky number" between 0 and 5. If your lucky number is 0 you have
-//  * no discount, if your lucky number is 1 you'll get a 10% discount, if it's 2,
-//  * the discount is 25%, if it's 3, 35%, if it's 4, 50%, and if it's 5 you'll get
-//  * everything for free!.
-//  *
-//  * Write a function named `calculateTotal` which accepts a lucky number and total
-//  * amount, and returns the discounted price.
-//
-
-// let luckyNumber = [0,1,2,3,4,5];
-// let randomLuckyNumber = luckyNumber[Math.floor(Math.random() * luckyNumber.length)];
-// function calculateTotal (randomLuckyNumber, totalAmount, discountedPrice) {
-//     totalAmount = prompt("What is your total amount?");
-//
-// if (randomLuckyNumber === 0) {
-//         return ( totalAmount - 0);
-//     } else if ( randomLuckyNumber === 1) {
-//         return ( totalAmount - (totalAmount * .10));
-//     } else if ( randomLuckyNumber === 2) {
-//         return ( totalAmount - (totalAmount * .25));
-//     } else if ( randomLuckyNumber === 3) {
-//         return (totalAmount - (totalAmount * .35));
-//     } else if ( randomLuckyNumber === 4) {
-//         return ( totalAmount - (totalAmount * .50));
-//     } else {
-//         return ( totalAmount - totalAmount);
-//     }
-// }
-// console.log(calculateTotal(randomLuckyNumber,));
+/*
+ * TODO:
+ * Suppose there's a promotion in Walmart, each customer is given a randomly
+ * generated "lucky number" between 0 and 5. If your lucky number is 0 you have
+ * no discount, if your lucky number is 1 you'll get a 10% discount, if it's 2,
+ * the discount is 25%, if it's 3, 35%, if it's 4, 50%, and if it's 5 you'll get
+ * everything for free!.
+ *
+ * Write a function named `calculateTotal` which accepts a lucky number and total
+ * amount, and returns the discounted price.
 
 
-let luckyNumber = [0, 1, 2, 3, 4, 5];
-let randomLuckyNumber = luckyNumber[Math.floor(Math.random() * luckyNumber.length )];
+let luckyNumber = [0,1,2,3,4,5];
+let randomLuckyNumber = luckyNumber[Math.floor(Math.random() * luckyNumber.length)];
+function calculateTotal (randomLuckyNumber, totalAmount, discountedPrice) {
+    totalAmount = prompt("What is your total amount?");
+
+if (randomLuckyNumber === 0) {
+        return ( totalAmount - 0);
+    } else if ( randomLuckyNumber === 1) {
+        return ( totalAmount - (totalAmount * .10));
+    } else if ( randomLuckyNumber === 2) {
+        return ( totalAmount - (totalAmount * .25));
+    } else if ( randomLuckyNumber === 3) {
+        return (totalAmount - (totalAmount * .35));
+    } else if ( randomLuckyNumber === 4) {
+        return ( totalAmount - (totalAmount * .50));
+    } else {
+        return ( totalAmount - totalAmount);
+    }
+}
+console.log(calculateTotal(randomLuckyNumber,));
+
+*/
+
+
+//let luckyNumber = [0, 1, 2, 3, 4, 5];
+let randomLuckyNumber = Math.floor(Math.random() * 6);
 let totalAmount = prompt("What is your total?");
 
 console.log(randomLuckyNumber);
@@ -197,34 +202,59 @@ console.log(calculateTotals(luckyNumbers,billTotal));
 //  * Do *NOT* display any of the above information
 //  * if the user enters a value that is not of the number data type.
 //  * Instead, use an alert to inform them of the incorrect input data type.
-function numberInput () {
-   let question = confirm("Would you like to enter a number?");
-    if (question === true) {
-      let num = prompt("Please enter your number.");
-        num = parseInt(num);
-        if (num % 2 === 0 && num > 0) {
-            alert("Your number is even.");
-            alert(`Your number plus 100 is ${num + 100}.`);
-            alert("Your number is positive");
-        } else if (num % 2 === 0 && num < 0) {
-            alert("Your number is even.");
-            alert(`Your number plus 100 is ${num + 100}.`);
-            alert("Your number is negative");
-        } else if (num % 2 === 1 && num > 0) {
-            alert("Your number is odd.");
-            alert(`Your number plus 100 is ${num + 100}.`);
-            alert("Your number is positive.");
-        } else if (num % 2 === 1 && num < 0) {
+
+function num () {
+    let num = prompt("Enter a number:");
+    num = parseInt(num);
+    if (num % 2 === 0 && num > 0) {
+        alert("Your number is even.");
+        alert(`Your number plus 100 is ${num + 100}.`);
+        alert("Your number is positive");
+    } else if (num % 2 === 0 && num < 0) {
+        alert("Your number is even.");
+        alert(`Your number plus 100 is ${num + 100}.`);
+        alert("Your number is negative");
+    } else if (!(num % 2 === 1 && num > 0)) {
+        if (num % 2 === 1 && num < 0) {
             alert("Your number is odd.");
             alert(`Your number plus 100 is ${num + 100}.`);
             alert("Your number is negative.");
         } else {
             alert("Incorrect input data type.Fix yourself.");
         }
+    } else {
+        alert("Your number is odd.");
+        alert(`Your number plus 100 is ${num + 100}.`);
+        alert("Your number is positive.");
+    }
+}
+
+function numberInput () {
+
+    let question = confirm("Would you like to enter a number?");
+    if (question === true) {
+        num();
+    } else {
+        return alert("why dont you want to play?");
+    }
+}
+
+console.log(numberInput());
+
+
+
+if (confirm("would you like to enter a number?")){
+    const num = Number(prompt("enter your number:"));
+
+    if (num % 2 === 0) {
+        alert("that is an even number");
+    } else {
+        alert("that is an odd number.");
     }
 
+    alert(`${num} plus 100 is ${num + 100}`);
+
 }
-console.log(numberInput());
 
 //  * Can you refactor your code to use functions?
 //  * HINT: The way we prompt for a value could be improved

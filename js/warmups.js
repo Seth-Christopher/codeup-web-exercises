@@ -27,3 +27,11 @@ function trim (str, num) {
 
 console.log(trim("Hel", 2 ));
 
+function trims (str, num) {
+    if (str.length < num) {
+        return str;
+    } else {
+        return `${str.substring(0, num -3)}...`;
+    }
+}
+
