@@ -1,5 +1,6 @@
 "use strict"
 
+// prompt the user for an odd number between 1 and 50. Use a loop and a break statement to continue prompting the user if they enter invalid input.
 
 function randomNumberFromUser() {
     let guess = prompt("enter an odd number from 1 - 50");
@@ -14,7 +15,14 @@ function randomNumberFromUser() {
     }
 }
 
+// enter loop until user gets odd number
+
 console.log(randomNumberFromUser());
+
+
+
+// Use a loop and the continue statement to output all the odd numbers between 1 and 50, except for the number the user entered.
+
 
 // function oddNumberContinue () {
 //     let input = prompt("Enter an odd number between 1 - 50.");
@@ -29,8 +37,6 @@ console.log(randomNumberFromUser());
 //
 // oddNumberContinue();
 
-// output all odd numbers between 1 - 50
-// except for number the user inputs
 
 // } if (input != Number || input % 2 !== 0) {
 //     prompt("Wrong! input a valid odd number.");
@@ -50,3 +56,41 @@ console.log(randomNumberFromUser());
 // }
 // getOddNumber();
 
+
+
+// example with BILLY
+
+// created isEven function to use within our loop
+function isEven (num) {
+    return num % 2 === 0;
+}
+
+// create a variable to hold int for number entered
+let userNum;
+// do while loop while(true)
+do {
+    //prompt user for input and parse it in to an int
+    userNum = parseInt(prompt(`Please enter an odd number between 1 - 49`));
+
+    // if a number is even, alert the user and continue
+    if (isEven(userNum)) {
+        alert(`${userNum} is even. Please enter an odd number`);
+        continue;
+    }
+
+
+
+// if a number is less than 1 or greater than 49, alert the user and continue
+if(userNum < 1 || userNum > 49){
+    alert(`${userNum} is out of bounds. Please enter a number between 1 and 49`)
+    continue;
+}
+
+//if a number is not finite, alert the user and continue
+if(!isFinite(userNum)) {
+    alert(`${userNum} is not a number. Please enter a valid number.`)
+    continue;
+}
+
+break;
+}while(true);

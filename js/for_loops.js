@@ -1,5 +1,8 @@
 "use strict"
 
+
+// basic looping example
+
 myLoopingFunction(3);
 myLoopingFunction(10);
 
@@ -12,16 +15,16 @@ function myLoopingFunction(maxIterations) {
 console.log("done");
 
 
-// 2
+// Create a function named showMultiplicationTable that accepts a number and console.logs the multiplication table for that number (just multiply by the numbers 1 through 10)
 function showMultiplicationTable (number) {
     for(let i = 0; i <= 10; i++) {
-        console.log( `${number} x ` + i + ` = ` + number  * i);
+        console.log( `${number} x   ${i}   =  ${number*i}`);
     }
 }
 
 console.log(showMultiplicationTable(7));
 
-// 3
+// Use a for loop and the functions from the previous lessons to generate 10 random numbers between 20 and 200 and output to the console whether each number is odd or even. For example:
 function exercise3 (number) {
     number = Math.floor(Math.random() * (200 - 20)) + 20;
 
@@ -34,12 +37,30 @@ function exercise3 (number) {
         }
     }
 }
-
 console.log(exercise3());
 
-// 4
+ // solutions with Billy
+for (let i = 0; i < 10; i++) {
+    let number = getRandomInt(20, 200);
+    console.log(`The number is: ${number}`)
+    console.log(`Number is even: ${isEven(number)}`);
+}
 
-// FUNCTION FOR GENERATING A PYRAMID BASED OFF USER INPUT:
+
+
+// below are two functions from previous lessons.
+function getRandomInt (min, max) {
+    return Math.floor(Math.random()) * (max - min) + min;
+}
+function isEven (num) {
+    return num % 2 === 0;
+}
+
+
+
+// Create a for loop that uses console.log to create the output shown below.
+
+// FUNCTION FOR GENERATING A PYRAMID BASED OFF USER INPUT WITH TWO ERRORS:
 function generatePyramid(totalNumberOfRows) {
     if (!Number.isInteger(totalNumberOfRows)) throw new Error("Total number of rows must be an integer."); // throw error if
     if (totalNumberOfRows < 0) throw new Error("Total number of rows cannot be less than zero."); // throw error if
@@ -61,10 +82,18 @@ for (let i = 0; i < 10; i++) {
 
 }
 
-// example with Doc Rob
-function pyramid () {
+// example with BILLY
 
+
+for (let i = 1; i <= 9; i++) {
+    let str = `${i}`;
+    for (let j = 1; j < i; j++) {
+        str += i;
+    }
+    console.log(str);
 }
+
+// example with Doc Rob
 
 function numberRow() {
     // output a row in the console that is numNumbers digits long
@@ -82,7 +111,7 @@ console.log(generatePyramids(8))
 
 */
 
-// 5
+// create a for loop that decriments by 5 from 100:
 function exercise5 () {
     for (let i = 100; i >= 5 ; i-= 5) {
         console.log(i);
