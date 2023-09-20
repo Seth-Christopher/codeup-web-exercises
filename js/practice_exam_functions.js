@@ -13,8 +13,14 @@ function isGreaterThan (a, b){
     return a > b;
 }
 
-// Define a function named 'add'
 
-// Define a function named 'multiply'
 
-// Define a function named ' '
+// Define a function named 'Palindrome'
+function isPalindrome (string){
+    if (typeof string === "string"){
+        string = string.toLowerCase();
+        return string.split("").reverse().join('') === string;
+    } else {
+        return false;
+    }
+}
