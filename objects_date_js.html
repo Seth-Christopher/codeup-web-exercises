@@ -14,21 +14,28 @@
 
     // todo:
     // Create the date corresponding to your birthday using the JavaScript Date object.
-    //let jsBirthday
+    let myBirthday = new Date(1990, 9, 7).toDateString();
 
+    console.log(myBirthday);
     // todo:
     // Log your birthday in the format: January 1, 2014 using the JavaScript Date object.
     // See link below for methods needed:
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#Getter
-    console.log('Here is my birthday using JavaScript: ');
+    console.log(`Here is my birthday using JavaScript: ${myBirthday}`);
 
 
-    let myDate = new Date();
+
 
     // make a date object for a specific date and print it
-    myDate = new Date(1990, 11, 7);
-    let dateString = myDate.getDay();
+    //const options = {weekday: "long", year: "numeric", month: "short", day: "numeric"};
+    const myDate = new Date().toLocaleDateString({
+        weekday: "short",
+        year: "numeric",
+        month: "short",
+    });
 
+
+    console.log(myDate);
 
 </script>
 

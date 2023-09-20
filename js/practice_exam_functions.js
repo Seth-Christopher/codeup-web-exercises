@@ -12,3 +12,9 @@ function cube (num){
 function isGreaterThan (a, b){
     return a > b;
 }
+
+// Define a function named 'add'
+
+// Define a function named 'multiply'
+
+// Define a function named ' '

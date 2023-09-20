@@ -35,3 +35,23 @@ function trims (str, num) {
     }
 }
 
+
+/* Convert Address to Object Warmup
+  * write a function named convertAddressToObject that accepts a string that contains a street number (as a string) and street name separated by space characters, and returns an object with properties streetNumber and streetName
+  *
+  * examples----
+  * >> convertAddressToObject('8646 Sunny Oaks') {streetNumber: '8646', streetName: 'Sunny Oaks'}
+  * >> convertAddressToObject('5408 Villa Nuevo') {streetNumber: '5408', streetName: 'Villa Nuevo'}
+  */
+
+function addressToObject(address){
+    const streetNumber = address.split(' ', 1).toString();
+    const indexOfFirstSpace = address.indexOf(' ');
+    const streetName = address.substring(indexOfFirstSpace + 1);
+    return {
+        streetNumber : streetNumber,
+        streetName : streetName
+    }
+}
+
+console.log(addressToObject('5434 KingsLanding Drive'));
