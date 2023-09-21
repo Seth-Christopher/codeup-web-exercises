@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us!</title>
+</head>
+<body>
+<form action ="https://request-inspector.glitch.me/">
+    <fieldset>
+        <legend>Subscribe</legend>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <br><br>
+    </fieldset>
+    <fieldset>
+            <legend>Your bio:</legend>
+            <label for="bio">Bio:</label>
+            <textarea name="bio" id="bio" cols="30" rows="10" placeholder="write stuff..."></textarea>
+    </fieldset>
+    <fieldset>
+        <legend>How did you hear about us?</legend>
+            <label for="billboard">Billboard</label>
+            <input type="radio" id="billboard" value="billboard" name="group1">
+
+            <label for="radio advertisement">Radio Advertisement:</label>
+            <input type="radio" id="radio advertisement" value="radio advertisement" name="group1">
+
+            <label for="internet advertisement">Internet Advertisement:</label>
+            <input type="radio" id="internet advertisement" value="internet advertisement" name="group2">
+
+            <label for="other">Other:</label>
+            <input type="radio" id="other" value="other" name="group2">
+    </fieldset>
+    <fieldset>
+        <legend>Web Browser</legend>
+        <p><strong>Which web browser are you using?</strong></p>
+            <label for="select">Select:</label>
+            <select name="select" id="select">
+            <option value="Chrome">Chrome</option>
+            <option value="FireFox">FireFox</option>
+            <option value="Internet Explorer">Internet Explorer</option>
+            </select>
+    </fieldset>
+    <br><br>
+    <input type="submit"  value="Submit">
+    <br><br>
+    <fieldset>
+            <legend>Extras</legend>
+
+            <label for="provolone">Provolone</label>
+            <input type="checkbox" name="extras" value="provolone" id="provolone">
+
+            <label for="cheddar">Cheddar</label>
+            <input type="checkbox" name="extras" value="cheddar" id="cheddar">
+
+            <label for="american">American</label>
+            <input type="checkbox" name="extras" value="american" id="american">
+    </fieldset>
+    <fieldset>
+            <legend>Assorted Other Inputs</legend>
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date">
+    </fieldset>
+</form>
+</body>
+</html>
