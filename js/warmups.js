@@ -66,3 +66,30 @@ function averageOfArrayNums(arrayOfNums){
     }
     return sum / numNums;
 }
+
+// create a function named isAvgWhole
+
+function isAvgWhole(arrayOfNums){
+    return averageOfArrayNums(arrayOfNums) % 1 === 0;
+}
+
+// write a function named totalPets that accepts an array of objects where each object represents a person, and has a 'pets' property for their owned pets. The function should return the sum of every object's numPets property
+
+function totalPets(array){
+    let numPets = 0;                         // initialize Accumulator variable
+    array.forEach(person => numPets += person.pets);    // loop over array    // add pets to Accumulator
+
+    /* for (let i = 0; i < array.length; i++){         // using for loop instead of forEach
+         numPets += array[i].pets;    */
+
+    /* for (const person of array){             // using a for of loop
+    *      numPets += person.pets;  */
+    return numPets;
+}
+
+console.log(totalPets([
+    {name: 'Fernando Medoza', pets: 1},
+    {name: 'James Bond', pets: 8},
+    {name: 'Sarah OcConnor', pets:5},
+    {name: 'Brian Dawkins', pets:3}
+]));

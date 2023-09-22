@@ -3,20 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <title>Github HTML</title>
+    <style>
+        a:hover {
+            background-size: 0 3px, 100% 3px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #777983fc;
+        }
+
+        a {
+            background:
+                    linear-gradient( to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)
+                    ),
+                    linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1)
+                    );
+            background-size: 100% 3px, 0 3px;
+            background-position: 100% 100%, 0 100%;
+            background-repeat: no-repeat;
+            transition: background-size 400ms;
+        }
+        img:hover {
+            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+        .container {
+            display: flex;
+            align-items: flex-start;
+            padding-top: 20px;
+            padding-left: 10px;
+            padding-bottom: 20px;
+            width: 6000px;
+            height: 30px;
+            background-color: black;
+            font-weight: 700;
+            font-size: 22px;
+            border: 2px solid black;
+
+        }
+
+        .container {
+            align-self: center;
+        }
+
+
+        /*.item {*/
+        /*    width: 6000px;*/
+        /*    height: 60px;*/
+        /*    background-color: black;*/
+        /*    padding: 1rem;*/
+        /*    font-weight: 700;*/
+        /*    color: white;*/
+        /*    text-align: left;*/
+        /*    border: 2px solid black;*/
+        /*}*/
+
+
+
+
+
+
+/*.item {*/
+/*	width: 80px;*/
+/*	height: 60px;*/
+/*	background-color: #fb7185;*/
+/*	padding: 1rem;*/
+/*	font-weight: 700;*/
+/*	color: var(--clr-light);*/
+/*	text-align: center;*/
+/*	border: 2px solid black;*/
+/*}*/
+
+.item-0 {
+   align-self: center;
+   padding-right: 10px;
+}
+.item-1 {
+    margin-left: 30px;
+    color: white;
+    margin-right: 10px;
+}
+.item-2 {
+    margin-left: 15px;
+    color: white;
+    margin-right: 10px;
+}
+.item-3 {
+    margin-left: 15px;
+    color: white;
+    margin-right: 10px;
+}
+.item-4 {
+    margin-left: 15px;
+    color: white;
+}
+/*.item-6 {*/
+/*	background-color: violet;*/
+/*}*/
+
+
+
+    </style>
 </head>
 <body>
 <header>
     <nav>
-        <img src=".idea/img/codeup-imgs/github-mark.png" height="50" width="50"/>
-        <a href="https://github.com/pulls">Pull Requests</a>
-        <a href="https://github.com/issues">Pull Requests</a>
-        <a href="https://github.com/marketplace">Pull Requests</a>
-        <a href="https://github.com/explore">Pull Requests</a>
+    <div class="container">
+        <div class="item item-0">
+            <img src=".idea/img/codeup-imgs/github-logo-white.png" height="55" width="55">
+        </div>
+        <div class="item item-1">
+            <a href="https://github.com/pulls">Pull Requests</a>
+        </div>
+        <div class="item item-2">
+            <a href="https://github.com/issues">Issues</a>
+        </div>
+        <div class="item item-3">
+            <a href="https://github.com/marketplace">Marketplace</a>
+        </div>
+        <div class="item item-4">
+            <a href="https://github.com/explore">Explore</a>
+        </div>
+    </div>
     </nav>
 </header>
 <main>
     <br>
-        <img src=".idea/img/codeup-imgs/codeup-arrow copy.png" height="51" width="58"/></header>
+        <p><img src=".idea/img/codeup-imgs/codeup-arrow copy.png" height="51" width="58"/>CodeUp
+        </p>
     <h2>Codeup</h2>
         <ul>
             <li>Repos</li>
