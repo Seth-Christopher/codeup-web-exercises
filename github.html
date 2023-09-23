@@ -3,116 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Github HTML</title>
-    <style>
-        a:hover {
-            background-size: 0 3px, 100% 3px;
-        }
+    <link rel="stylesheet" href="css/github-html-form-exercise.css">
 
-        a {
-            text-decoration: none;
-            color: #777983fc;
-        }
-
-        a {
-            background:
-                    linear-gradient( to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)
-                    ),
-                    linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1)
-                    );
-            background-size: 100% 3px, 0 3px;
-            background-position: 100% 100%, 0 100%;
-            background-repeat: no-repeat;
-            transition: background-size 400ms;
-        }
-        img:hover {
-            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-            -webkit-transform: scaleX(-1);
-            transform: scaleX(-1);
-        }
-        .container {
-            display: flex;
-            align-items: flex-start;
-            padding-top: 20px;
-            padding-left: 10px;
-            padding-bottom: 20px;
-            width: 6000px;
-            height: 30px;
-            background-color: black;
-            font-weight: 700;
-            font-size: 22px;
-            border: 2px solid black;
-
-        }
-
-        .container {
-            align-self: center;
-        }
-
-
-        /*.item {*/
-        /*    width: 6000px;*/
-        /*    height: 60px;*/
-        /*    background-color: black;*/
-        /*    padding: 1rem;*/
-        /*    font-weight: 700;*/
-        /*    color: white;*/
-        /*    text-align: left;*/
-        /*    border: 2px solid black;*/
-        /*}*/
-
-
-
-
-
-
-/*.item {*/
-/*	width: 80px;*/
-/*	height: 60px;*/
-/*	background-color: #fb7185;*/
-/*	padding: 1rem;*/
-/*	font-weight: 700;*/
-/*	color: var(--clr-light);*/
-/*	text-align: center;*/
-/*	border: 2px solid black;*/
-/*}*/
-
-.item-0 {
-   align-self: center;
-   padding-right: 10px;
-}
-.item-1 {
-    margin-left: 30px;
-    color: white;
-    margin-right: 10px;
-}
-.item-2 {
-    margin-left: 15px;
-    color: white;
-    margin-right: 10px;
-}
-.item-3 {
-    margin-left: 15px;
-    color: white;
-    margin-right: 10px;
-}
-.item-4 {
-    margin-left: 15px;
-    color: white;
-}
-/*.item-6 {*/
-/*	background-color: violet;*/
-/*}*/
-
-
-
-    </style>
 </head>
 <body>
 <header>
     <nav>
     <div class="container">
         <div class="item item-0">
-            <img src=".idea/img/codeup-imgs/github-logo-white.png" height="55" width="55">
+            <a href="https://github.com/"><img src=".idea/img/codeup-imgs/github-logo-white.png" height="55" width="55"></a>
         </div>
         <div class="item item-1">
             <a href="https://github.com/pulls">Pull Requests</a>
@@ -131,49 +30,95 @@
 </header>
 <main>
     <br>
-        <p><img src=".idea/img/codeup-imgs/codeup-arrow copy.png" height="51" width="58"/>CodeUp
+        <p>
+            <a href="https://codeup.edu/"><img src=".idea/img/codeup-imgs/codeup-arrow copy.png" height="51" width="58"/></a>
+            <span class="codeClass">CodeUp</span>
         </p>
-    <h2>Codeup</h2>
-        <ul>
-            <li>Repos</li>
-            <li>People</li>
-            <li>Teams</li>
-            <li>Projects</li>
-            <li>Settings</li>
-        </ul>
-    <p>Codeup's dev team</p>
-        <a href="https://fer-uig.glitch.me?uuid=1"><img src="https://fer-uig.glitch.me?uuid=1" alt="user-icon" />Kent Black</a>
-    <p>Kent Black <br>
-        Member <br>
-        X team members
-    </p>
-<a href="https://fer-uig.glitch.me?uuid=1"><img src="https://fer-uig.glitch.me?uuid=4" alt="user-icon" />Codeup Staff</a>
-<p>Codeup Staff <br>
-    Member <br>
-    X team members
-</p><a href="https://fer-uig.glitch.me?uuid=1"><img src="https://fer-uig.glitch.me?uuid=2" alt="user-icon" />Tom Foolery</a>
-<p>Tom Foolery <br>
-    Member <br>
-    X team members
-</p>
+
+
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Repositories')">Repositories</button>
+        <button class="tablinks" onclick="openTab(event, 'People')">People</button>
+        <button class="tablinks" onclick="openTab(event, 'Teams')">Teams</button>
+        <button class="tablinks" onclick="openTab(event, 'Projects')">Projects</button>
+        <button class="tablinks" onclick="openTab(event, 'Settings')">Settings</button>
+    </div>
+
+    <div id="Repositories" class="tabcontent">
+        <h3>Repositories</h3>
+        <p>Repos are empty.</p>
+    </div>
+
+    <div id="People" class="tabcontent">
+        <h3 class="tbBack">Codeup's Dev Team</h3>
+
+        <div id="pplBlock" class="pplBack">
+
+        <a href="https://fer-uig.glitch.me?uuid=1"><img src="https://fer-uig.glitch.me?uuid=1" alt="user-icon" /></a>
+            <h3 class="name">Kent Black</h3>
+                Member <br>
+                    X team members
+        </div>
+        <div id="pplBlock" class="pplBack">
+        <a href="https://fer-uig.glitch.me?uuid=1"><img src="https://fer-uig.glitch.me?uuid=4" alt="user-icon" /></a>
+        <h3 class="name">Codeup Staff</h3>
+            Member <br>
+            X team members
+        </div>
+        <div id="pplBlock" class="pplBack">
+        <a href="https://fer-uig.glitch.me?uuid=1"><img src="https://fer-uig.glitch.me?uuid=2" alt="user-icon" /></a>
+
+            <h3><u>Tom Foolery</u></h3>
+            Member <br>
+            X team members
+        </div>
+    </div>
+
+    <div id="Teams" class="tabcontent">
+        <h3>Teams</h3>
+        <p>Teams is empty.</p>
+    </div>
+    <div id="Projects" class="tabcontent">
+        <h3>Projects</h3>
+        <p>Projects is empty.</p>
+    </div>
+    <div id="Settings" class="tabcontent">
+        <h3>Settings</h3>
+        <p>Settings are empty.</p>
+    </div>
 </main>
 <footer>
-    <p>&copy; 2018 Github. Inc.</p>
+    <p>&copy; 2018 Github. Inc.
     <a href="https://docs.github.com/en/site-policy/github-terms/github-terms-of-service">Terms</a>
     <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement">Privacy</a>
     <a href="https://github.com/security">Security</a>
     <a href="https://github.com/services/">Status</a>
     <a href="https://support.github.com/?tags=dotcom-footern">GitHub Help</a>
-    <br>
     <a href="https://docs.github.com/en">Contact</a>
     <a href="https://github.com/security">API</a>
     <a href=" https://support.github.com/?tags=dotcom-footer">Training</a>
-
-
-
-
-
+    </p>
 </footer>
+
+
+
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
 
 </body>
 </html>
+

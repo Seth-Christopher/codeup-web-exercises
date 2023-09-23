@@ -1,0 +1,133 @@
+a:hover {
+    background-size: 0 3px, 100% 3px;
+}
+
+a {
+    text-decoration: none;
+    color: #777983fc;
+}
+
+a {
+    background:
+            linear-gradient( to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)
+            ),
+            linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1)
+            );
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.container {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    width: 6000px;
+    height: 30px;
+    background-color: black;
+    font-weight: 700;
+    font-size: 22px;
+    border: 2px solid black;
+
+}
+
+.container {
+    align-self: center;
+}
+
+
+.item-0 {
+    align-self: center;
+    padding-right: 10px;
+}
+.item-1 {
+    margin-left: 30px;
+    color: white;
+    margin-right: 10px;
+}
+.item-2 {
+    margin-left: 15px;
+    color: white;
+    margin-right: 10px;
+}
+.item-3 {
+    margin-left: 15px;
+    color: white;
+    margin-right: 10px;
+}
+.item-4 {
+    margin-left: 15px;
+    color: white;
+}
+
+.codeClass {
+    font-size: 30px;
+    color: black;
+    padding-left: 15px;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: white;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.tbBack {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    padding: 20px 20px 15px;
+
+}
+.pplBack {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+}
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+h3:hover {
+    -webkit-filter: grayscale(0.5) blur(10px);
+}
