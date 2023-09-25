@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+body {
+    background-color: aqua;
+    background-image: url("https://wallpapercave.com/wp/gAAoJrE.jpg");
+    color: aqua;
+    font-family: 'Open Sans', sans-serif;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.fancy-header, h2 {
+    text-align: center;
+    text-decoration: underline;
+}
 .fancy-header:hover {
     font-size: 55px;
     color: aqua;
@@ -6,8 +21,78 @@
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
 }
+
+img {
+    opacity: 50%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 3px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .2s ease-in-out;
+}
 img:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+    filter: brightness(100%);
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
 }
+
+.list-style {
+    list-style: none;
+}
+
+.fancy-table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 1px solid #2f3243fc;
+    clear: both;
+    inline-size: 70%;
+    border-collapse: collapse;
+    border-block-end-style: solid;
+    border-block-end-width: thin thick;
+    border-block-start-style: solid;
+    border-block-start-color: #2f3243fc;
+    border-block-start-width: thin thick;
+    color: #777983fc;
+}
+
+table:hover {
+        font-size: 30px;
+        color: aqua;
+        background-color: #ffffff00;
+        opacity: 80%;
+        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+}
+.footer-p  {
+    font-style: italic;
+    font-size: 8px;
+    padding: 10px;
+}
+.footer-p:hover {
+    font-size: 25px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+a:visited {
+    color: red;
+}
+a:hover {
+    color: #08af08;
+}
+a:link {
+    color: pink;
+}
+a:active {
+    color: white;
+}
+
+
