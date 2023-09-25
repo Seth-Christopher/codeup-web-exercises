@@ -1,0 +1,56 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+.message-info {
+    padding: 10px;
+    margin: 10px;
+    background-color: #86ACECEB;
+    color: #0854bb;
+    /*-webkit-text-stroke-width: 1.5px;*/
+    /*-webkit-text-stroke-color: #4c88e1;*/
+    line-height: 2;
+    border-radius: 8px;
+    font-weight: bold;
+
+}
+
+.message-success {
+    padding: 10px;
+    margin: 10px;
+    background-color: #87dc81;
+    color: #0b7900;
+    /*-webkit-text-stroke-width: 1.5px;*/
+    /*-webkit-text-stroke-color: #2cb720;*/
+    line-height: 2;
+    border-radius: 8px;
+    font-weight: bold;
+
+}
+.message-warning {
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(255, 255, 110, 0.76);
+    color: rgb(147, 147, 4);
+    /*-webkit-text-stroke-width: 1.5px;*/
+    /*-webkit-text-stroke-color: rgb(180, 180, 20);*/
+    line-height: 2;
+    border-radius: 8px;
+    font-weight: bold;
+
+}
+.message-error {
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(227, 109, 130, 0.75);
+    color: rgb(154, 10, 33);
+    /*-webkit-text-stroke-width: 1.5px;*/
+    /*-webkit-text-stroke-color: rgb(206, 43, 73);*/
+    line-height: 2;
+    border-radius: 8px;
+    font-weight: bold;
+}
