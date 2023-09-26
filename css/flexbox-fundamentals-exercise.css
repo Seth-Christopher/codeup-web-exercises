@@ -25,7 +25,9 @@ h2, h3 {
     width: 2em;
 }
 
-.border {border: 2px solid black;}
+.border {
+    border: 2px solid black;
+}
 
 .card {
     width: 400px;
@@ -33,12 +35,16 @@ h2, h3 {
     background: white;
     padding: 1em;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     /* enter needed declarations here */
 }
 
 section {
     display: flex;
     flex-direction: row;
+    /*align-items: center;*/
     /* enter needed declarations here */
 }
 
@@ -76,6 +82,7 @@ section:nth-of-type(1) div:last-child {
 }
 
 section:nth-of-type(3) {
+    justify-content: end;
     /* enter needed declarations here */
 }
 
@@ -98,7 +105,7 @@ section:nth-of-type(3) h3 {
     height: 5em;
     width: 5em;
     background: brown;
-    /* enter needed declarations here */
+    flex-grow: 1;/* enter needed declarations here */
 }
 
 .large-brown-box:nth-of-type(2) {
@@ -106,6 +113,7 @@ section:nth-of-type(3) h3 {
 }
 
 section:nth-of-type(5) {
+    justify-content: space-evenly;
     /* enter needed declarations here */
 }
 
@@ -118,6 +126,9 @@ section:nth-of-type(5) {
 section:nth-of-type(6) {
     background: coral;
     height: 14em;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
     /* enter needed declarations here */
 }
 
