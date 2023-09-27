@@ -1,18 +1,168 @@
-.fieldset:hover {
-    font-size: 55px;
-    color: aqua;
-    background-color: black;
-    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
+* {
+    padding: 0;
+    margin: 0;
 }
-legend:hover {
-    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
+
+body, html {
+    height: 100%;
+    width: 100%;
+    background-color: #0854bb;
+    font-family: Arial, Ubuntu, sans-serif;
 }
-.fieldset-2 {
-    transform: rotate(357deg);
-    box-shadow: -2px 0px 20px 15px #000;
-    color: rgba(27,185,8,1);
+
+/*.fieldset:hover {*/
+/*    font-size: 55px;*/
+/*    color: aqua;*/
+/*    background-color: black;*/
+/*    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);*/
+/*    -webkit-transform: scaleX(1);*/
+/*    transform: scaleX(1);*/
+/*}*/
+/*legend:hover {*/
+/*    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);*/
+/*    -webkit-transform: scaleX(1);*/
+/*    transform: scaleX(1);*/
+/*}*/
+
+form {
+    padding: 1em;
+    margin: 1em;
+}
+
+fieldset {
+    padding:10px;
+    border: none;
+
+}
+
+.width-80 {
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 8px;
+}
+
+.form-group0 {
+    border: 0.5rem outset #47bdff;
+    outline: 0.5rem solid #e60cc4;
+    box-shadow: 0 0 20px 2rem black;
+    border-radius: 12px;
+    margin: 2rem;
+    padding: 1rem;
+    outline-offset: 0.5rem;
+    font-family:'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    background-color: #f400d7;
+    color: #07c0ff;
+    outline-style: groove;
+}
+
+.form-group1 {
+    border: 0.5rem outset #47bdff;
+    outline: 0.5rem solid #e60cc4;
+    box-shadow: 0 0 20px 2rem black;
+    border-radius: 12px;
+    margin: 2rem;
+    padding: 1rem;
+    outline-offset: 0.5rem;
+    font-family:'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    background-color: #f400d7;
+    color: #07c0ff;
+    outline-style: groove;
+}
+
+.form-group2 {
+    border: 0.5rem outset #47bdff;
+    outline: 0.5rem solid #e60cc4;
+    box-shadow: 0 0 20px 2rem black;
+    border-radius: 12px;
+    margin: 2rem;
+    padding: 1rem;
+    outline-offset: 0.5rem;
+    font-family:'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    background-color: #f400d7;
+    color: #07c0ff;
+    outline-style: groove;
+}
+
+.form-group3 {
+    border: 0.5rem outset #47bdff;
+    outline: 0.5rem solid #e60cc4;
+    box-shadow: 0 0 20px 2rem black;
+    border-radius: 12px;
+    margin: 2rem;
+    padding: 1rem;
+    outline-offset: 0.5rem;
+    font-family:'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    background-color: #f400d7;
+    color: #07c0ff;
+    outline-style: groove;
+
+}
+
+.form-group4 {
+    border: 0.5rem outset #47bdff;
+    outline: 0.5rem solid #e60cc4;
+    box-shadow: 0 0 20px 2rem black;
+    border-radius: 12px;
+    margin: 2rem;
+    padding: 1rem;
+    outline-offset: 0.5rem;
+    font-family:'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    background-color: #f400d7;
+    color: #07c0ff;
+    outline-style: groove;
+}
+
+
+
+.form-label {
+    font-weight: bold;
+    text-decoration: underline;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-size: 20px;
+}
+
+.legends {
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+
+}
+
+#container {
+    text-align: center;
+}
+.btn {
+    padding: 8px;
+    color: #47bdff;
+    font-weight: bold;
+    background-color: #f400d7;
+    border-radius: 3px;
+    border: 0.4rem outset #47bdff;
+    outline: 0.5rem solid #e60cc4;
+    box-shadow: 0 0 10px 1rem black;
+    outline-style: groove;
+    text-decoration: underline;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-size: 15px;
+
+}
+
+.form-control {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin: .5em 0;
 }

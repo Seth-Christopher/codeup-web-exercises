@@ -7,65 +7,71 @@
 </head>
 <body>
     <form action ="https://request-inspector.glitch.me/">
-        <fieldset class="fieldset">
-            <div class=""
-         <legend>Subscribe</legend>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username">
-            <br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            <br><br>
-    </fieldset>
-    <fieldset class="fieldset-2">
-            <legend>Your bio:</legend>
-            <label for="bio">Bio:</label>
-            <textarea name="bio" id="bio" cols="30" rows="10" placeholder="write stuff..."></textarea>
-    </fieldset>
-    <fieldset>
-        <legend>How did you hear about us?</legend>
-            <label for="billboard">Billboard</label>
-            <input type="radio" id="billboard" value="billboard" name="group1">
+        <fieldset class="width-80">
+            <div class="form-group0">
+                    <label for="username" class="form-label">Username:</label>
+                    <input type="text" id="username" name="username" class="form-control">
+                    <br><br>
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control">
+                    <br><br>
+            </div>
+        </fieldset>
+        <fieldset class="width-80">
+            <div class="form-group1">
+                <legend class="legends">Your bio:</legend>
+                <textarea name="bio" id="bio" cols="30" rows="10" placeholder="write stuff..." class="form-control"></textarea>
+            </div>
+        </fieldset>
+        <fieldset class="width-80">
+            <div class="form-group2">
+                 <legend class="legends">How did you hear about us?</legend>
+                    <label for="billboard" class="form-label">Billboard</label>
+                    <input type="radio" id="billboard" value="billboard" name="group1" class="form-control">
 
-            <label for="radio advertisement">Radio Advertisement:</label>
-            <input type="radio" id="radio advertisement" value="radio advertisement" name="group1">
+                    <label for="radio advertisement" class="form-label">Radio Advertisement:</label>
+                    <input type="radio" id="radio advertisement" value="radio advertisement" name="group1" class="form-control">
 
-            <label for="internet advertisement">Internet Advertisement:</label>
-            <input type="radio" id="internet advertisement" value="internet advertisement" name="group2">
+                    <label for="internet advertisement" class="form-label">Internet Advertisement:</label>
+                    <input type="radio" id="internet advertisement" value="internet advertisement" name="group2" class="form-control">
 
-            <label for="other">Other:</label>
-            <input type="radio" id="other" value="other" name="group2">
-    </fieldset>
-    <fieldset>
-        <legend>Web Browser</legend>
-        <p><strong>Which web browser are you using?</strong></p>
-            <label for="select">Select:</label>
-            <select name="select" id="select">
-            <option value="Chrome">Chrome</option>
-            <option value="FireFox">FireFox</option>
-            <option value="Internet Explorer">Internet Explorer</option>
-            </select>
-    </fieldset>
-    <br><br>
-    <input type="submit"  value="Submit">
-    <br><br>
-    <fieldset>
-            <legend>Extras</legend>
+                    <label for="other" class="form-label">Other:</label>
+                    <input type="radio" id="other" value="other" name="group2" class="form-control">
+            </div>
+        </fieldset>
+        <fieldset class="width-80">
+            <div class="form-group3">
+                <legend class="legends">Web Browser</legend>
+                    <p class="form-label">Which web browser are you using?</p>
+                        <label for="select" class="form-label">Select:</label>
+                        <select name="select" id="select">
+                        <option value="Chrome">Chrome</option>
+                        <option value="FireFox">FireFox</option>
+                        <option value="Internet Explorer">Internet Explorer</option>
+                        </select>
+            </div>
+        </fieldset>
+            <div id="container">
+                <button class="btn">Submit</button>
+            </div>
 
-            <label for="provolone">Provolone</label>
-            <input type="checkbox" name="extras" value="provolone" id="provolone">
 
-            <label for="cheddar">Cheddar</label>
-            <input type="checkbox" name="extras" value="cheddar" id="cheddar">
 
-            <label for="american">American</label>
-            <input type="checkbox" name="extras" value="american" id="american">
-    </fieldset>
-    <fieldset>
-            <legend>Assorted Other Inputs</legend>
-            <label for="date">Date</label>
-            <input type="date" name="date" id="date">
-    </fieldset>
+
+        <fieldset class="width-80">
+            <div class="form-group4">
+                <legend class="legends">Extras</legend>
+
+                <label for="provolone" class="form-label">Provolone</label>
+                <input type="checkbox" name="extras" value="provolone" id="provolone" class="form-control">
+
+                <label for="cheddar" class="form-label">Cheddar</label>
+                <input type="checkbox" name="extras" value="cheddar" id="cheddar" class="form-control">
+
+                <label for="american" class="form-label">American</label>
+                <input type="checkbox" name="extras" value="american" id="american" class="form-control">
+            </div>
+        </fieldset>
 </form>
 </body>
 </html>
