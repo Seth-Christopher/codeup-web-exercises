@@ -1,0 +1,152 @@
+/* All your custom styles for this site go here */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.page-wrapper {
+    background-color: #D9D9D9;
+}
+.container.login {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 45px 25px;
+    width: calc(100% - 40px);
+    max-width: 530px;
+    box-shadow: 0px 0px 104px -40px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    z-index: 50;
+}
+
+#dots-left {
+    position: absolute;
+    top: 600px;
+    left: 200px;
+}
+#dots-right {
+    position: absolute;
+    top: 20px;
+    right: 100px;
+}
+#footer-light-wave {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
+#footer-dark-wave {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
+#left-wave {
+    position: absolute;
+    top: 175px;
+    left:  10px;
+}
+#right-wave {
+    position: absolute;
+    top: 500px;
+    right: 10px;
+}
+#x-marks-spot {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 110;
+    box-shadow: 0px 0px 5px 2px rgba(185, 182, 182, 0.5);
+    border: none;
+    border-radius: 50px;
+    background-color:white;
+    cursor: pointer;
+    padding: 10px;
+    /*width: 25px;*/
+    /*height: 25px;*/
+    /*border-radius: 100%;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*position: absolute;*/
+    /*right: 0;*/
+    /*top: 0;*/
+}
+
+#register-meow {
+    text-align: center;
+    opacity: 50%;
+
+}
+#now-register {
+    color: #AA04F9;
+    font-weight: bolder;
+}
+#now-register {
+    transition: .3s ease 0s;
+}
+#now-register:hover {
+    color: black;
+    /*font-size: 45px;*/
+    /*padding: 15px;*/
+}
+.container.login h1 {
+    font-size: 15px;
+    text-align: center;
+}
+
+
+
+
+input {
+    min-height: 55px;
+    border: 1px solid #DDDFE1;
+    padding: 0px 10px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+input:placeholder {
+    color: #ABAFB3;
+}
+
+label.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label.input-group span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+label.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+label.checkbox span {
+    font-size: 13px;
+    color: #ABAFB3;
+}
+
+a.link {
+    font-size: 13px;
+}
+
+button.btn {
+    min-height: 55px;
+    border: none;
+    border-radius: 99px;
+    background-color: #AA04F9;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button.btn.btn-login {
+    align-self: center;
+    flex: 0 1 auto;
+    min-width: 250px;
+}
+
+
