@@ -149,4 +149,19 @@ button.btn.btn-login {
     min-width: 250px;
 }
 
+#list-for-bottomfoot {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
 
+#list-for-bottomfoot a {
+    font-weight: bolder;
+    color: #AA04F9;
+}
+
+#list-for-bottomfoot a:hover {
+    color: black;
+    transition: 0.3s ease 0s;
+}

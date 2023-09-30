@@ -26,6 +26,9 @@ li, a {
 .logo {
     margin-top: 1.3em;
     cursor: pointer;
+    height: 185px;
+    width: 420px;
+    object-fit: contain;
 }
 
 .nav-links {
