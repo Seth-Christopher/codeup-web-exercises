@@ -52,6 +52,8 @@ li:nth-of-type(5) {
 }
 li:nth-of-type(5):hover {
     color: #0088a9;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 li:nth-of-type(5) {
     transition: 0.3s ease 0s;
