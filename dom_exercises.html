@@ -39,21 +39,21 @@
     // dom_exercises.html questions and solutions:
     const header1 = document.querySelector("h1");
     header1.addEventListener("click", function (event) {
-        header1.style.backgroundColor = "red";
+        this.style.backgroundColor = "red";
     });
 
     const paragraphEnlarge = document.querySelector("p");
     paragraphEnlarge.addEventListener("dblclick", function (event) {
-       paragraphEnlarge.style.fontSize = "18px";
+       this.style.fontSize = "18px";
     });
 
     const textColor = document.querySelectorAll("li");
     for (let i = 0; i < textColor.length ; i++) {
         textColor[i].addEventListener("mouseenter", function (event) {
-            textColor[i].style.color = "red";
+            this.style.color = "red";
         });
         textColor[i].addEventListener("mouseleave", function(event) {
-            textColor[i].style.color = "black";
+            this.style.color = "black";
         })
 
     }

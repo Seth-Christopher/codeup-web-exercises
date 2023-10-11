@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+
+
+<h1>Konami Code</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    "use strict";
+
+
+    function backImg () {
+        let img = document.querySelector(".wrapper");
+        img.src= "https://willetspen.com/cdn/shop/collections/gobirds.jpg?v=1674608757";
+    }
+
+    let keysPressed = " ";
+    let konamiCode = ("ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightabEnter");
+    // console.log(konamiCode);
+
+    document.addEventListener("keyup", function (event) {
+      keysPressed += event.key;
+        console.log(keysPressed)
+      if( keysPressed.includes(konamiCode)) {
+          alert("You have added 30 lives!")
+          document.querySelector('body').style.backgroundImage = 'url("https://willetspen.com/cdn/shop/collections/gobirds.jpg?v=1674608757")';
+      }
+  });
+</script>
+</body>
+</html>
