@@ -32,11 +32,34 @@
 <button id="btn4">Change text in paragraph </button>
 
 
-<button id="backGround">Change Background</button>
 
 
 <script>
     "use strict";
+    // dom_exercises.html questions and solutions:
+    const header1 = document.querySelector("h1");
+    header1.addEventListener("click", function (event) {
+        header1.style.backgroundColor = "red";
+    });
+
+    const paragraphEnlarge = document.querySelector("p");
+    paragraphEnlarge.addEventListener("dblclick", function (event) {
+       paragraphEnlarge.style.fontSize = "18px";
+    });
+
+    const textColor = document.querySelectorAll("li");
+    for (let i = 0; i < textColor.length ; i++) {
+        textColor[i].addEventListener("mouseenter", function (event) {
+            textColor[i].style.color = "red";
+        });
+        textColor[i].addEventListener("mouseleave", function(event) {
+            textColor[i].style.color = "black";
+        })
+
+    }
+
+
+
     // TODO: Uncomment next line and get the main header element by id
     // const mainHeader = document.getElementById('main-header') ;
 
@@ -108,37 +131,6 @@
 
         subParagraphs[0].innerText = "Mission Accomplished!";
     });
-
-
-
-    const backGround = document.querySelector("#backGround");
-    backGround.addEventListener("click", function () {
-        const body = document.querySelector('.bgColor');
-        body.style.backgroundColor = "rgb(8, 255, 124)",
-            "rgb(18, 243, 116",
-            "rgb(23, 231, 109",
-            "rgb(27, 219, 101",
-            "rgb(29, 207, 94)",
-            "rgb(30, 196, 87)",
-            "rgb(30, 184, 80)",
-            "rgb(30, 173, 73)",
-            "rgb(29, 162, 67)",
-            "rgb(27, 151, 60)",
-            "rgb(26, 140, 54)",
-            "rgb(24, 129, 48)",
-            "rgb(22, 118, 42)",
-            "rgb(19, 108, 37)",
-            "rgb(17, 98, 31)",
-            "rgb(14, 88, 26)",
-            "rgb(11, 78, 20)",
-            "rgb(8, 69, 16)",
-            "rgb(5, 59, 10)",
-            "rgb(4, 50, 4)";
-    });
-
-
-
-
 </script>
 </body>
 </html>
