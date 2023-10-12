@@ -2,17 +2,38 @@
 <html>
 <head>
     <title>Konami Code</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            height: 100dvh;
+        }
+        .wrapper {
+            background-image: url("img/Konami_Code.webp");
+            height: 100%;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    <iframe src="https://giphy.com/embed/2obZgQhen41lm" width="474" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 </head>
 <body>
+<div class="wrapper">
+
 
 
 <h1>Konami Code</h1>
+<audio id="dun" controls style="display: none" type="audio/mpeg">
+    <source src="audio/dun-dun-dun-sound-effect-brass_8nFBccR.mp3">
+</audio>
 
 
 
 
-
-
+    <p><a href="https://giphy.com/gifs/work-imgur-lord-2obZgQhen41lm">via GIPHY</a></p>">
 
 
 
@@ -22,15 +43,14 @@
 
 <script>
     "use strict";
+    // function playSound (audioName) {
+    //     let mySound = new Audio(audioName);
+    //     audio.play();
+    // }
 
-
-    function backImg () {
-        let img = document.querySelector(".wrapper");
-        img.src= "https://willetspen.com/cdn/shop/collections/gobirds.jpg?v=1674608757";
-    }
 
     let keysPressed = " ";
-    let konamiCode = ("ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightabEnter");
+    let konamiCode = ("ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter");
     // console.log(konamiCode);
 
     document.addEventListener("keyup", function (event) {
@@ -38,9 +58,16 @@
         console.log(keysPressed)
       if( keysPressed.includes(konamiCode)) {
           alert("You have added 30 lives!")
-          document.querySelector('body').style.backgroundImage = 'url("https://willetspen.com/cdn/shop/collections/gobirds.jpg?v=1674608757")';
+          document.querySelector('body').style.backgroundImage = 'url("img/Konami_Code.webp")';
+      }
+      if( keysPressed.includes(konamiCode)) {
+          document.querySelector('#dun').play();
+      }
+      if( keysPressed.includes(konamiCode)) {
+          document.querySelector('body').style.backgroundImage = 'url(<iframe src="https://giphy.com/embed/2obZgQhen41lm" width="474" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/work-imgur-lord-2obZgQhen41lm">via GIPHY</a></p>)';
       }
   });
 </script>
+</div>
 </body>
 </html>
