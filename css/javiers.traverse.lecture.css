@@ -1,5 +1,6 @@
 :root {
     --text-color: #e8e7e7;
+    --border-rd: 5px;
 }
 
 * {
@@ -19,8 +20,45 @@
 }
 
 header {
-    margin-top: 25px;
+    margin: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
 }
+
+div#addCardFormWrapper {
+    transition: max-height 0.7s ease-out, opacity 0.7s ease-in-out;
+}
+
+div.hideForm {
+    opacity: 0;
+    max-height: 0;
+}
+
+div.showForm {
+    opacity: 1;
+    max-height: 500px;
+}
+
+fieldset {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.5rem;
+    padding: 15px;
+    border-radius: var(--border-rd);
+
+}
+
+fieldset textarea, fieldset input {
+    border-radius: var(--border-rd);
+    padding: 5px 10px;
+}
+
+fieldset textarea {
+    min-height: 4rem;
+    resize: none;
+}
+
 
 #gizmos {
     display: flex;
@@ -37,7 +75,7 @@ header {
     flex-flow: column nowrap;
     align-items: center;
     border: 1px solid var(--text-color);
-    border-radius: 5px;
+    border-radius: var(--border-rd);
     padding: 10px 0;
     gap: 10px;
 }
@@ -52,12 +90,30 @@ header {
     padding: 0 10px;
 }
 
-.gizmo button {
-    margin-top: auto;
+button {
     background-color: #464040;
     color: var(--text-color);
     border: 1px solid var(--text-color);
-    border-radius: 5px;
+    border-radius: var(--border-rd);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #726868;
+}
+
+div#addCardFormWrapper button {
+    padding: 7px 0;
+    margin-top: 10px;
+}
+
+header button {
+    padding: 0 15px;
+}
+.gizmo button {
+    margin-top: auto;
+
     width: 30%;
     padding: 7px 0;
 }

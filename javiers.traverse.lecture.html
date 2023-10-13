@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,25 +11,44 @@
 <div id="all-content">
     <header>
         <h1>DOM Traversal</h1>
+        <button>Add Card</button>
     </header>
+        <div id="addCardFormWrapper" class="hideForm">
+            <form>
+                <fieldset>
+                    <legend>Add a Card:</legend>
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" id="title">
+                    <label for="image">Image Link:</label>
+                    <input type="text" name="image" id="image">
+                    <label for="description">Description:</label>
+                    <textarea name="description" id="description"></textarea>
+                    <button>Add Card</button>
+                </fieldset>
+            </form>
+        </div>
+
     <div id="gizmos">
         <div class="gizmo">
             <h2>Lightsaber</h2>
-            <img src="img/luke-with-lighbsaber.png" alt="Luke Skywalker tries the light saber in Obi Wan Kenobi's house on Tatooine">
+            <img src="img/at-ease-logo.png" alt="atEase">
             <p>A lightsaber is a plasma blade emitted from a hilt through a kyber crystal, which can be shut off at will. It can cut through almost anything, including blast doors, but takes specialized training to use well.</p>
-            <button>Edit</button>
+            <button class="edit">Edit</button>
+            <button class="remove">Remove</button>
         </div>
         <div class="gizmo">
             <h2>Hoverboard</h2>
-            <img src="img/hoverboard.png" alt="Marty McFly on the hoverboard in Back to the Future II">
+            <img src="img/pizza.png" alt="pizza">
             <p>A hoverboard is a skateboard that hovers above the ground and moves forward under its own power.</p>
-            <button>Edit</button>
+            <button class="edit">Edit</button>
+            <button class="remove">Remove</button>
         </div>
         <div class="gizmo">
             <h2>Replicator</h2>
-            <img src="img/replicator.png" alt="In a futuristic setting, a cup of coffee materializes out of a hazy fog">
+            <img src="img/Konami_Code.webp" alt="code">
             <p>A replicator is a device that transforms any matter, including waste or trash, into any other object or material. It can break anything down into its component atoms and rearrange those atoms into any shape.</p>
-            <button>Edit</button>
+            <button class="edit">Edit</button>
+            <button class="remove">Remove</button>
         </div>
     </div>
 </div>

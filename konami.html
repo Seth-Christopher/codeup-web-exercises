@@ -8,6 +8,7 @@
             padding: 0;
             margin: 0;
             height: 100dvh;
+            background-color: black;
         }
         .wrapper {
             background-image: url("img/Konami_Code.webp");
@@ -17,15 +18,34 @@
             background-size: cover;
             background-position: center;
         }
+
+        .hideGif {
+            opacity: 0;
+            max-height: 0;
+        }
+
+
+        .showGif {
+            position: absolute;
+            top: 5%;
+            left: 15%;
+            opacity: 1;
+            max-height: 1100px;
+            background-size: cover;
+            width: 1300px;
+            pointer-events: none;
+            border: none;
+            /*box-shadow: 0 0 100px 100px black inset;*/
+        }
     </style>
-    <iframe src="https://giphy.com/embed/2obZgQhen41lm" width="474" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 </head>
 <body>
+
 <div class="wrapper">
 
 
 
-<h1>Konami Code</h1>
+<iframe id="gif" src="https://giphy.com/embed/2obZgQhen41lm" class = "hideGif"></iframe>
 <audio id="dun" controls style="display: none" type="audio/mpeg">
     <source src="audio/dun-dun-dun-sound-effect-brass_8nFBccR.mp3">
 </audio>
@@ -33,7 +53,6 @@
 
 
 
-    <p><a href="https://giphy.com/gifs/work-imgur-lord-2obZgQhen41lm">via GIPHY</a></p>">
 
 
 
@@ -41,33 +60,31 @@
 
 
 
-<script>
+
+</div>
+
+<script defer>
     "use strict";
-    // function playSound (audioName) {
-    //     let mySound = new Audio(audioName);
-    //     audio.play();
-    // }
 
+    document.querySelector("#gif")
 
     let keysPressed = " ";
     let konamiCode = ("ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter");
     // console.log(konamiCode);
 
     document.addEventListener("keyup", function (event) {
-      keysPressed += event.key;
+        keysPressed += event.key;
         console.log(keysPressed)
-      if( keysPressed.includes(konamiCode)) {
-          alert("You have added 30 lives!")
-          document.querySelector('body').style.backgroundImage = 'url("img/Konami_Code.webp")';
-      }
-      if( keysPressed.includes(konamiCode)) {
-          document.querySelector('#dun').play();
-      }
-      if( keysPressed.includes(konamiCode)) {
-          document.querySelector('body').style.backgroundImage = 'url(<iframe src="https://giphy.com/embed/2obZgQhen41lm" width="474" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/work-imgur-lord-2obZgQhen41lm">via GIPHY</a></p>)';
-      }
-  });
+        if( keysPressed.includes(konamiCode)) {
+            alert("YOU HAVE ADDED MORE LIVES!!!")
+            const theGif = document.querySelector("#gif");
+            theGif.classList.remove("hideGif");
+            theGif.classList.add("showGif");
+            document.querySelector('#dun').play();
+            const removeBackImg = document.querySelector(".wrapper");
+            removeBackImg.classList.remove("wrapper");
+        }
+    });
 </script>
-</div>
 </body>
 </html>
