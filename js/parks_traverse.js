@@ -4,6 +4,7 @@ const highlightButtons = document.querySelectorAll(".national-parks button");
 
 const headersBold = document.querySelectorAll(".national-parks h3");
 
+/* created a function that will style the last list items background color to yellow */
 function lastListItemHighlight (event) {
     console.log(event.target.parentElement.firstElementChild.nextElementSibling.lastElementChild);
 
@@ -18,6 +19,7 @@ highlightButtons.forEach(highlightButton => {
     highlightButton.addEventListener('click', lastListItemHighlight);
 });
 
+/* created a function that changes the h3 heading to bold when clicked */
 function headerBolder (event) {
     console.log(event.target)
     const lisBold = event.target.parentElement.firstElementChild.nextElementSibling;
