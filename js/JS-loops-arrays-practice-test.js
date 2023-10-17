@@ -1,8 +1,8 @@
 /* Write a function named sumOfStringLengths that accepts an array of strings. The function returns the sum of the lengths of all the strings in the array.
 console.log(sumOfStringLengths([""])); // outputs 0
 console.log(sumOfStringLengths(["the", "big", "pizza"])); // outputs 11 */
-function sumOfStringLengths (array) {
-    for (let i = 0; i < array.length; i++) {
+function sumOfStringLengths (string) {
+    for (let i = 0; i < string[i].length; i++) {
 
     }
 }
