@@ -67,3 +67,19 @@ const roastSelection = document.querySelector('#roast-selection');
 section.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+
+
+<!-- added modal when searching -->
+const openButton = document.querySelector("[data-open-modal]");
+const closeButton = document.querySelector("[data-close-modal]");
+const modal =document.querySelector("[data-modal]");
+
+openButton.addEventListener("click", () => {
+    modal.showModal();
+})
+
+closeButton.addEventListener("click", () => {
+    modal.close();
+})
+

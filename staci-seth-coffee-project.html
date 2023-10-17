@@ -41,9 +41,16 @@
                     </li>
 
                 </ul>
+
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Find your Coffee!" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button data-open-modal class="btn btn-outline-success">Search</button>
+
+
+                    <dialog data-modal class="modal">
+                        <div>this is a modal</div>
+                        <button data-close-modal>Close</button>
+                    </dialog>
                 </form>
             </div>
         </div>
