@@ -1,5 +1,5 @@
 "use strict";
-// array of random prices that was dropped in slack by Javier
+//==================================== array of random prices that was dropped in slack by Javier
 const prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
 // forEach loop is used primarily with arrays
 // below we are using a basic function declaration within the forEach method
@@ -11,7 +11,7 @@ prices.forEach(function (price, index) {
 });
 
 
-// using the given array below, use the forEach method to loop through the array and console log both the name, and id or index of the character name.
+//========= using the given array below, use the forEach method to loop through the array and console log both the name, and id or index of the character name.
 
 const smashers = ["Mario", "Donkey Kong", "Link", "Samus","Dark Samus", "Yoshi", "Kirby", "Fox", "Pikachu", "Luigi", "Ness", "Captain Falcon", "Jigglypuff",     "Peach", "Daisy", "Bowser", "Ice Climbers", "Sheik", "Zelda", "Dr. Mario", "Pichu", "Falco", "Marth", "Lucina", "Young Link", "Ganondorf", "Mewtwo", "Roy", "Chrom", "Mr. Game & Watch", "Meta Knight", "Pit", "Dark Pit", "Zero Suit Samus", "Wario", "Snake", "Ike", "Pokemon Trainer", "Squirtle", "Ivysaur", "Charizard", "Diddy Kong", "Lucas", "Sonic", "King Dedede", "Olimar", "Lucario", "R.O.B.", "Toon Link", "Wolf", "Villager", "Mega Man", "Wii Fit Trainer", "Rosalina & Luma", "Little Mac", "Greninja", "Mii Brawler", "Mii Swordfighter", "Mii Gunner", "Palutena", "Pac-Man", "Robin", "Shulk", "Bowser Jr.", "Duck Hunt", "Ryu", "Ken", "Cloud", "Corrin", "Bayonetta", "Inkling", "Ridley", "Simon", "Richter", "King K. Rool", "Isabelle", "Incineroar", "Piranha Plant", "Joker", "Hero", "Banjo & Kazooie", "Terry", "Byleth", "Min Min", "Steve", "Sephiroth", "Pyra", "Mythra", "Kazuya", "Sora"];
 
@@ -101,3 +101,40 @@ lowMileages.forEach(car => {
     // below we use the outputDiv we originally created at the top of this JS file , which uses a querySelector to specifically select the <div id="output"> and add to the page using the appendChild. The value of appendChild is our carParagraph variable which creates an Element in the "p" (paragraph) portion of the HTML page.
     outputDiv.appendChild(carParagraph);
 });
+
+
+
+//=========================== .reduce method
+
+// find the sum of prices array
+const totalPrice = prices.reduce(function(sumSoFar, currentPrice) {
+    console.log(sumSoFar + ", " + currentPrice);
+    return sumSoFar + currentPrice;
+}, 0);
+console.log(totalPrice);
+
+// find the max price (price with highest value) of prices array
+function findMaxPrice(maxSoFar, currentPrice) {
+    // what does this return
+    if(currentPrice > maxSoFar) {
+        return currentPrice;
+    }
+    // current price is less than or equal <= to maxSoFar so KEEP the existing maxSoFar
+    return maxSoFar;
+}
+const maxPrice = prices.reduce(findMaxPrice, prices[0]);
+console.log(maxPrice);
+
+// find car with the lowest mileage with the cars array
+function findLowestMileage (lowestSoFar, currentCar) {
+    // use if statement to compare lowestSoFar to currentCar and replace lowestSoFar, IF the currentCar.mileage has lower mileage than lowestSoFar.mileage
+    if ( currentCar.mileage < lowestSoFar.mileage) {
+        return currentCar;
+    }
+    return lowestSoFar;
+}
+// below we start at index 0 in the cars array
+const lowestMileageCar = cars.reduce(findLowestMileage, cars[0]);
+
+
+
