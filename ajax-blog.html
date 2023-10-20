@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Blog exercise</title>
+</head>
+<body>
+<h1>Ajax Blog</h1>
+<div id="posts"></div>
+
+
+
+
+
+
+
+<script>
+    "use strict";
+
+    fetch("/data/blog.json")
+        .then(response => response.json())
+        .then(data => {
+            loadBlogData(data);
+        });
+
+    function loadBlogData (blogData) {
+        for (let i = 0; i < blogData.length; i++) {
+            addDataFromBlog(blogData[i]);
+        }
+        // console.log(blogData);
+    }
+
+    function addDataFromBlog (data) {
+        const tbody = document.querySelector("#posts");
+        const paragraph = document.createElement("p");
+        paragraph.innerHTML = `<h2>${data.title} </h2>
+                               <p> ${data.content} </p>
+                               <h3>Categories:</h3>
+                               <p>${data.categories}</p>
+                               <h4>Date:</h4>
+                               <p>${data.date}</p>
+                               <hr>`;
+        tbody.appendChild(paragraph);
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -10,3 +10,5 @@ const ghOptions = {
 fetch("https://api.github.com/users", ghOptions)
     .then(response => response.json())
     .then(data => console.log(data));
+
+
