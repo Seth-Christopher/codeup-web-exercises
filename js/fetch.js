@@ -8,5 +8,5 @@ const ghOptions = {
 }
 
 fetch("https://api.github.com/users", ghOptions)
-    .then(respons => response.json())
+    .then(response => response.json())
     .then(data => console.log(data));
