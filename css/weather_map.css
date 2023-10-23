@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mapboxgl-popup {
+    max-width: 400px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+.card-group {
+    margin-top: 200px;
+}
+.card {
+border: 1px solid;
+}
+#map {
+    position: absolute;
+    top: 400px;
+    bottom: 0;
+    left: 200px;
+    width: 80%;
+    height: 55%;
+    border: 1px solid black;
+    margin-top: 35px;
+}

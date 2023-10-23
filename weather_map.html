@@ -3,10 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map exercise</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="css/weather_map.css">
 </head>
 <body>
+
+<!-- WEATHER CARDS START -->
+
+<div class="container">
+    <div class="card-group" id="weather-cards">
+<!--        <div class="card">-->
+<!--            <h5 class="card-title">Card title</h5>-->
+<!--            <p class="card-top"></p>-->
+<!--            <div class="card-body">-->
+<!--                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+<!--                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="card">-->
+<!--            <img src="..." class="card-img-top" alt="...">-->
+<!--            <div class="card-body">-->
+<!--                <h5 class="card-title">Card title</h5>-->
+<!--                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>-->
+<!--                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="card">-->
+<!--            <img src="..." class="card-img-top" alt="...">-->
+<!--            <div class="card-body">-->
+<!--                <h5 class="card-title">Card title</h5>-->
+<!--                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>-->
+<!--                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="card">-->
+<!--            <img src="..." class="card-img-top" alt="...">-->
+<!--            <div class="card-body">-->
+<!--                <h5 class="card-title">Card title</h5>-->
+<!--                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>-->
+<!--                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="card">-->
+<!--            <img src="..." class="card-img-top" alt="...">-->
+<!--            <div class="card-body">-->
+<!--                <h5 class="card-title">Card title</h5>-->
+<!--                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>-->
+<!--                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!-- WEATHER CARDS END -->
+
+
+
 <div id="forecast"></div>
 
+<div id="map"></div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
 <script src="js/javiers_weather_utils.js"></script>
 <script src="js/weather_map.js"></script>
