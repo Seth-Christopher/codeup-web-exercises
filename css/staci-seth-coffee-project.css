@@ -173,6 +173,7 @@ html ::-webkit-scrollbar {
 }
 #top-cards .card img {
     border-radius: 10px;
+    height: 300px;
 }
 #top-cards .card:hover{
     transform: translateY(-10px);
