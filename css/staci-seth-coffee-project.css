@@ -143,9 +143,14 @@ html ::-webkit-scrollbar {
 
 
 /* cards start */
+
+.container {
+    height: 80%;
+}
+
 #top-cards {
     width: 100%;
-    height: 60vh;
+    height: 40vh;
     background: #f7f5f2;
 }
 .heading2 {
@@ -164,6 +169,7 @@ html ::-webkit-scrollbar {
     border-radius: 10px;
     transition: 0.5s;
     cursor: pointer;
+    height: 80%;
 }
 #top-cards .card img {
     border-radius: 10px;
