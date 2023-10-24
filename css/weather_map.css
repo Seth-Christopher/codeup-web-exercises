@@ -9,15 +9,29 @@
     font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
+.icon {
+    height: 100px;
+    width: 200px;
+    object-fit: contain;
+}
 .container {
     display: flex;
     justify-content: center;
 }
 .card-group {
-    margin-top: 200px;
+    margin-top: 100px;
 }
 .card {
 border: 1px solid;
+}
+
+i {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.increase-icon {
+    font-size: 4rem;
 }
 #map {
     position: absolute;

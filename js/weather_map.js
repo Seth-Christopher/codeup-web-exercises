@@ -1,177 +1,97 @@
- // TO MAKE THE MAP APPEAR YOU MUST
-    // ADD YOUR ACCESS TOKEN FROM
-    // https://account.mapbox.com
-    mapboxgl.accessToken = MAPBOX_API_KEY;
-    const map = new mapboxgl.Map({
-    container: 'map',
+// TO MAKE THE MAP APPEAR YOU MUST
+ // ADD YOUR ACCESS TOKEN FROM
+ // https://account.mapbox.com
+ mapboxgl.accessToken = MAPBOX_API_KEY;
+ const map = new mapboxgl.Map({
+     container: 'map',
 // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-    style: 'mapbox://styles/mapbox/streets-v12',
-    center: [-98.4946, 29.4252],
-    zoom: 11.15
-});
+     style: 'mapbox://styles/mapbox/streets-v12',
+     center: [-98.491125329, 29.42631],
+     zoom: 11
+ });
 
-    map.on('load', () => {
-    map.addSource('places', {
-// This GeoJSON contains features that include an "icon"
-// property. The value of the "icon" property corresponds
-// to an image in the Mapbox Streets style's sprite.
-        'type': 'geojson',
-        'data': {
-            'type': 'FeatureCollection',
-            'features': [
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'description':
-                            '<strong>Make it Mount Pleasant</strong><p><a href="http://www.mtpleasantdc.com/makeitmtpleasant" target="_blank" title="Opens in a new window">Make it Mount Pleasant</a> is a handmade and vintage market and afternoon of live entertainment and kids activities. 12:00-6:00 p.m.</p>',
-                        'icon': 'theatre'
-                    },
-                    'geometry': {
-                        'type': 'Point',
-                        'coordinates': [-77.038659, 38.931567]
-                    }
-                },
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'description':
-                            '<strong>Mad Men Season Five Finale Watch Party</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href="http://madmens5finale.eventbrite.com/" target="_blank" title="Opens in a new window">Mad Men Season Five Finale Watch Party</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. 8:00-11:00 p.m. $10 general admission, $20 admission and two hour open bar.</p>',
-                        'icon': 'theatre'
-                    },
-                    'geometry': {
-                        'type': 'Point',
-                        'coordinates': [-77.003168, 38.894651]
-                    }
-                },
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'description':
-                            '<strong>Big Backyard Beach Bash and Wine Fest</strong><p>EatBar (2761 Washington Boulevard Arlington VA) is throwing a <a href="http://tallulaeatbar.ticketleap.com/2012beachblanket/" target="_blank" title="Opens in a new window">Big Backyard Beach Bash and Wine Fest</a> on Saturday, serving up conch fritters, fish tacos and crab sliders, and Red Apron hot dogs. 12:00-3:00 p.m. $25.grill hot dogs.</p>',
-                        'icon': 'bar'
-                    },
-                    'geometry': {
-                        'type': 'Point',
-                        'coordinates': [-77.090372, 38.881189]
-                    }
-                },
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'description':
-                            '<strong>Ballston Arts & Crafts Market</strong><p>The <a href="http://ballstonarts-craftsmarket.blogspot.com/" target="_blank" title="Opens in a new window">Ballston Arts & Crafts Market</a> sets up shop next to the Ballston metro this Saturday for the first of five dates this summer. Nearly 35 artists and crafters will be on hand selling their wares. 10:00-4:00 p.m.</p>',
-                        'icon': 'art-gallery'
-                    },
-                    'geometry': {
-                        'type': 'Point',
-                        'coordinates': [-77.111561, 38.882342]
-                    }
-                },
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'description':
-                            '<strong>Seersucker Bike Ride and Social</strong><p>Feeling dandy? Get fancy, grab your bike, and take part in this year\'s <a href="http://dandiesandquaintrelles.com/2012/04/the-seersucker-social-is-set-for-june-9th-save-the-date-and-start-planning-your-look/" target="_blank" title="Opens in a new window">Seersucker Social</a> bike ride from Dandies and Quaintrelles. After the ride enjoy a lawn party at Hillwood with jazz, cocktails, paper hat-making, and more. 11:00-7:00 p.m.</p>',
-                        'icon': 'bicycle'
-                    },
-                    'geometry': {
-                        'type': 'Point',
-                        'coordinates': [-77.052477, 38.943951]
-                    }
-                },
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'description':
-                            '<strong>Capital Pride Parade</strong><p>The annual <a href="http://www.capitalpride.org/parade" target="_blank" title="Opens in a new window">Capital Pride Parade</a> makes its way through Dupont this Saturday. 4:30 p.m. Free.</p>',
-                        'icon': 'rocket'
-                    },
-                    'geometry': {
-                        'type': 'Point',
-                        'coordinates': [-77.043444, 38.909664]
-                    }
-                },
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'description':
-                            '<strong>Muhsinah</strong><p>Jazz-influenced hip hop artist <a href="http://www.muhsinah.com" target="_blank" title="Opens in a new window">Muhsinah</a> plays the <a href="http://www.blackcatdc.com">Black Cat</a> (1811 14th Street NW) tonight with <a href="http://www.exitclov.com" target="_blank" title="Opens in a new window">Exit Clov</a> and <a href="http://godsilla.bandcamp.com" target="_blank" title="Opens in a new window">Gods’illa</a>. 9:00 p.m. $12.</p>',
-                        'icon': 'music'
-                    },
-                    'geometry': {
-                        'type': 'Point',
-                        'coordinates': [-77.031706, 38.914581]
-                    }
-                },
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'description':
-                            '<strong>A Little Night Music</strong><p>The Arlington Players\' production of Stephen Sondheim\'s  <a href="http://www.thearlingtonplayers.org/drupal-6.20/node/4661/show" target="_blank" title="Opens in a new window"><em>A Little Night Music</em></a> comes to the Kogod Cradle at The Mead Center for American Theater (1101 6th Street SW) this weekend and next. 8:00 p.m.</p>',
-                        'icon': 'music'
-                    },
-                    'geometry': {
-                        'type': 'Point',
-                        'coordinates': [-77.020945, 38.878241]
-                    }
-                },
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'description':
-                            '<strong>Truckeroo</strong><p><a href="http://www.truckeroodc.com/www/" target="_blank">Truckeroo</a> brings dozens of food trucks, live music, and games to half and M Street SE (across from Navy Yard Metro Station) today from 11:00 a.m. to 11:00 p.m.</p>',
-                        'icon': 'music'
-                    },
-                    'geometry': {
-                        'type': 'Point',
-                        'coordinates': [-77.007481, 38.876516]
-                    }
-                }
-            ]
-        }
-    });
-// Add a layer showing the places.
-    map.addLayer({
-    'id': 'places',
-    'type': 'symbol',
-    'source': 'places',
-    'layout': {
-    'icon-image': ['get', 'icon'],
-    'icon-allow-overlap': true
-}
-});
+ /* Given a query in the form "lng, lat" or "lat, lng"
+ * returns the matching geographic coordinate(s)
+ * as search results in carmen geojson format,
+ * https://github.com/mapbox/carmen/blob/master/carmen-geojson.md */
+ const coordinatesGeocoder = function (query) {
+// Match anything which looks like
+// decimal degrees coordinate pair.
+     const matches = query.match(
+         /^[ ]*(?:Lat: )?(-?\d+\.?\d*)[, ]+(?:Lng: )?(-?\d+\.?\d*)[ ]*$/i
+     );
+     if (!matches) {
+         return null;
+     }
 
-// When a click event occurs on a feature in the places layer, open a popup at the
-// location of the feature, with description HTML from its properties.
-    map.on('click', 'places', (e) => {
-// Copy coordinates array.
-    const coordinates = e.features[0].geometry.coordinates.slice();
-    const description = e.features[0].properties.description;
+     function coordinateFeature(lng, lat) {
+         return {
+             center: [lng, lat],
+             geometry: {
+                 type: 'Point',
+                 coordinates: [lng, lat]
+             },
+             place_name: 'Lat: ' + lat + ' Lng: ' + lng,
+             place_type: ['coordinate'],
+             properties: {},
+             type: 'Feature'
+         };
+     }
 
-// Ensure that if the map is zoomed out such that multiple
-// copies of the feature are visible, the popup appears
-// over the copy being pointed to.
-    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-}
+     const coord1 = Number(matches[1]);
+     const coord2 = Number(matches[2]);
+     const geocodes = [];
 
-    new mapboxgl.Popup()
-    .setLngLat(coordinates)
-    .setHTML(description)
+     if (coord1 < -90 || coord1 > 90) {
+// must be lng, lat
+         geocodes.push(coordinateFeature(coord1, coord2));
+     }
+
+     if (coord2 < -90 || coord2 > 90) {
+// must be lat, lng
+         geocodes.push(coordinateFeature(coord2, coord1));
+     }
+
+     if (geocodes.length === 0) {
+// else could be either lng, lat or lat, lng
+         geocodes.push(coordinateFeature(coord1, coord2));
+         geocodes.push(coordinateFeature(coord2, coord1));
+     }
+
+     return geocodes;
+ };
+
+ // Add the control to the map.
+ map.addControl(
+     new MapboxGeocoder({
+         accessToken: mapboxgl.accessToken,
+         localGeocoder: coordinatesGeocoder,
+         zoom: 4,
+         placeholder: 'Give me that Addy?',
+         mapboxgl: mapboxgl,
+         reverseGeocode: true
+     })
+ );
+
+
+
+ <!--MARKER START  -->
+
+// Create a new marker.
+// const marker = new mapboxgl.Marker()
+//     .setLngLat([-98.491125329, 29.42631])
+//     .addTo(map);
+
+// Set marker options.
+const marker = new mapboxgl.Marker({
+    color: "rgba(14,14,14,0.44)",
+    draggable: true
+}).setLngLat([-98.49112532, 29.4231])
     .addTo(map);
-});
 
-// Change the cursor to a pointer when the mouse is over the places layer.
-    map.on('mouseenter', 'places', () => {
-    map.getCanvas().style.cursor = 'pointer';
-});
+<!-- MARKER END -->
 
-// Change it back to a pointer when it leaves.
-    map.on('mouseleave', 'places', () => {
-    map.getCanvas().style.cursor = '';
-});
-});
-
+<!-- ASSIGNING VARIABLES -->
 
 const weatherDate = document.querySelector(".card .card-title");
 const weatherTemp = document.querySelector(".card .card-top");
@@ -180,9 +100,20 @@ const weatherCardsDiv = document.querySelector("#weather-cards");
 const weatherOutput = document.querySelector("#forecast");
 
 
-const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-const d = new Date();
-let day = weekday[d.getDay()];
+ const getDayNameByDate = (dt) => {
+     const newDate =new Date(dt * 1000).toString().substring(4, 15);
+     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+     const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
+
+     const dayIndex = new Date( newDate ).getDay();
+     return days[dayIndex]
+
+
+ }
+
+
+
+
 
 fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
     `lat=29.426825118534886&lon=-98.48948239256946` + `&appid=${OPEN_WEATHER_API_KEY}&units=imperial`)
@@ -190,27 +121,25 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
     .then( forecast => {
         console.log(forecast)
         forecast.list.forEach((weather, index) => {
-            // const weatherDate = document.querySelectorAll(".card .card-title");
-            // const weatherTemp = document.querySelectorAll(".card .card-img-top");
-            // const time = document.createElement("p");
-            // const temp = document.createElement("p");
-            // weatherDate.innerText = dateFromTimeStamp(weather.dt);
-            // weatherTemp.innerText = weather.main.temp;
-            // weatherOutput.appendChild(weatherDate);
-            // weatherOutput.appendChild(weatherTemp);
             const date = dateFromTimeStamp(weather.dt);
-            const day = weekday[d.getDay(weather.dt)]      // attempting to obtain day of the week will finish tuesday
+            const day = getDayNameByDate(weather.dt)
             const temp = parseInt(weather.main.temp);
-            console.log(weather.dt);
+            const tempLow = parseInt(weather.main.temp_min);
+            const tempHigh = parseInt(weather.main.temp_max);
+            const feelsLike = parseInt(weather.main.feels_like);
+            const weatherDesc = (weather.weather[0].description);           // attempted to locate the weather description
+            console.log(weatherDesc);
+
             if (index % 8 === 0){
             const cardDiv = document.createElement("div");
             cardDiv.classList.add('card');
             cardDiv.innerHTML = `
-                                 <img src="..." class="card-img-top" alt="...">
+                                 <i class="bi bi-cloud-rain increase-icon"></i>
                                  <div class="card-body">
-                                     <h5 class="card-title">${day}${date}</h5>
-                                     <p class="card-text">${temp} Degrees.</p>
-                                     <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                     <h5 class="card-title">${day}, ${date}</h5>
+                                     <p class="card-text">Low ${tempLow}°F / High ${tempHigh}°F</p>
+                                     <p class="card-text"><small class="text-body-secondary">Feels Like: ${feelsLike}°F</small></p>
+                                     <p class="card-text">${weatherDesc}</p>
                                  </div>
                                         `;
             weatherCardsDiv.appendChild(cardDiv);
