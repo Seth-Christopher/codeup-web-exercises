@@ -73,8 +73,6 @@
      })
  );
 
-
-
  <!--MARKER START  -->
 
 // Create a new marker.
@@ -88,6 +86,17 @@ const marker = new mapboxgl.Marker({
     draggable: true
 }).setLngLat([-98.49112532, 29.4231])
     .addTo(map);
+
+map.on('style.load', function() {
+    map.on('click', function(e) {
+        let coordinates =e.lngLat;
+        new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML('you clicked here: <br/>' + coordinates)
+            .addTo(map);
+    });
+});
+
 
 <!-- MARKER END -->
 
