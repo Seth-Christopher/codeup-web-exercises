@@ -17,6 +17,18 @@ function dateFromTimeStamp(timeStamp){
     // return dateTime;
 }
 
+// get days of week to post to weather app.
+const getDayNameByDate = (dt) => {
+    const newDate =new Date(dt * 1000).toString().substring(4, 15);
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
+
+    const dayIndex = new Date( newDate ).getDay();
+    return days[dayIndex]
+
+
+}
+
 
 function windCardinalDirection(degrees){
     let cardinalDirection = '';
@@ -82,4 +94,9 @@ const daysOfWeekAbbreviated = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 function dayOfWeekFromDayAbbreviated(timeStamp){
     let dateTime = new Date(timeStamp * 1000);
     return daysOfWeekAbbreviated[dateTime.getDay()];
+}
+
+
+function randomNumber (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }

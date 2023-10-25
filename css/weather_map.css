@@ -51,7 +51,7 @@ i {
     width: 80%;
     height: 55%;
     border: 1px solid black;
-    margin-top: 35px;
+    margin-top: 105px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -61,9 +61,18 @@ i {
         position: relative;
         left: 20px;
         bottom: 200px;
-        /*margin-bottom: 400px;*/
+        margin-top: -100px;
     }
-    .card-group {
-        margin-bottom: -300px;
+    /*.container {*/
+    /*    display: flex;*/
+    /*    flex-direction: column;*/
+    /*}*/
+
+    .coordinates {
+        position: relative;
+        left: 20px;
+        top: 385px;
+        width: 90%;
+        margin-bottom: 450px;
     }
 }

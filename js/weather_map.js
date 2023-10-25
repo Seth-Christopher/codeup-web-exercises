@@ -51,11 +51,11 @@ const coordinates = document.querySelector('#coordinates');
          geocodes.push(coordinateFeature(coord1, coord2));
          geocodes.push(coordinateFeature(coord2, coord1));
      }
-
+     updateWeatherForCards(coordinatesGeocoder(coordinateFeature(geocodes)));
      return geocodes;
  };
 
- // Add the control to the map.
+ // Add the search bar to the map.
  map.addControl(
      new MapboxGeocoder({
          accessToken: mapboxgl.accessToken,
@@ -68,81 +68,56 @@ const coordinates = document.querySelector('#coordinates');
  );
 
  <!--MARKER START  -->
-
-// const marker = new mapboxgl.Marker({
-//     color: "rgba(14,14,14,0.44)",
-//     draggable: true
-// }).setLngLat([-98.49112532, 29.4231])
-//     .addTo(map);
-//
-// map.on('style.load', function() {
-//     map.on('click', function(e) {
-//         let coordinates =e.lngLat;
-//         new mapboxgl.Popup()
-//             .setLngLat(coordinates)
-//             .setHTML('you clicked here: <br/>' + coordinates)
-//             .addTo(map);
-//     });
-// });
  const marker = new mapboxgl.Marker({
      draggable: true
  })
      .setLngLat([-98.49112532, 29.4231])
      .addTo(map);
 
+ updateWeatherForCards (29.4231,-98.49112532 );
+
+
  function onDragEnd() {
      const lngLat = marker.getLngLat();
      coordinates.style.display = 'block';
      coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+     console.log(lngLat);
+     updateWeatherForCards(lngLat.lat, lngLat.lng)
  }
-
  marker.on('dragend', onDragEnd);
+
+
+
 <!-- MARKER END -->
 
 <!-- ASSIGNING VARIABLES -->
-
-const weatherDate = document.querySelector(".card .card-title");
-const weatherTemp = document.querySelector(".card .card-top");
-const weatherDesc = document.querySelector(".card-text");
 const weatherCardsDiv = document.querySelector("#weather-cards");
-const weatherOutput = document.querySelector("#forecast");
+const updateWeather = marker.on('dragend', onDragEnd);
 
+<!-- create cardsDiv function  -->
+function updateWeatherForCards (lat, lng) {
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
+        `lat=${lat}&lon=${lng}` + `&appid=${OPEN_WEATHER_API_KEY}&units=imperial`)
+        .then( data => data.json())
+        .then( forecast => {
+            console.log(forecast)
+            weatherCardsDiv.innerHTML = '';
 
- const getDayNameByDate = (dt) => {
-     const newDate =new Date(dt * 1000).toString().substring(4, 15);
-     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-     const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
+            forecast.list.forEach((weather, index) => {
+                const date = dateFromTimeStamp(weather.dt);
+                const day = getDayNameByDate(weather.dt)
+                const temp = parseInt(weather.main.temp);
+                const tempLow = parseInt(weather.main.temp_min);
+                const tempHigh = parseInt(weather.main.temp_max);
+                const feelsLike = parseInt(weather.main.feels_like);
+                const weatherDesc = (weather.weather[0].description);           // attempted to locate the weather description
+                console.log(weatherDesc);
 
-     const dayIndex = new Date( newDate ).getDay();
-     return days[dayIndex]
-
-
- }
-
-
-
-
-
-fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
-    `lat=29.426825118534886&lon=-98.48948239256946` + `&appid=${OPEN_WEATHER_API_KEY}&units=imperial`)
-    .then( data => data.json())
-    .then( forecast => {
-        console.log(forecast)
-        forecast.list.forEach((weather, index) => {
-            const date = dateFromTimeStamp(weather.dt);
-            const day = getDayNameByDate(weather.dt)
-            const temp = parseInt(weather.main.temp);
-            const tempLow = parseInt(weather.main.temp_min);
-            const tempHigh = parseInt(weather.main.temp_max);
-            const feelsLike = parseInt(weather.main.feels_like);
-            const weatherDesc = (weather.weather[0].description);           // attempted to locate the weather description
-            console.log(weatherDesc);
-
-            if (index % 8 === 0){
-            const cardDiv = document.createElement("div");
-            cardDiv.classList.add('card');
-            cardDiv.innerHTML = `
-                                 <i class="bi bi-cloud-rain increase-icon"></i>
+                if (index % 8 === 0){
+                    const cardDiv = document.createElement("div");
+                    cardDiv.classList.add('card');
+                    cardDiv.innerHTML = `
+                                 <img src=" https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png" class="card-img-top " alt="...">
                                  <div class="card-body">
                                      <h5 class="card-title">${day}, ${date}</h5>
                                      <p class="card-text">Low ${tempLow}°F / High ${tempHigh}°F</p>
@@ -150,7 +125,9 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
                                      <p class="card-text">${weatherDesc}</p>
                                  </div>
                                         `;
-            weatherCardsDiv.appendChild(cardDiv);
-              }   
-             })
-            });
+                    weatherCardsDiv.appendChild(cardDiv);
+                }
+            })
+        });
+
+}
