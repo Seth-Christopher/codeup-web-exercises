@@ -4,10 +4,20 @@
     box-sizing: border-box;
 }
 
-.mapboxgl-popup {
-    max-width: 400px;
-    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+.coordinates {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 100px;
+    left: 210px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
 }
+
 
 .icon {
     height: 100px;
@@ -42,4 +52,18 @@ i {
     height: 55%;
     border: 1px solid black;
     margin-top: 35px;
+}
+
+@media only screen and (max-width: 600px) {
+    #map {
+        width: 450px;
+        height: 600px;
+        position: relative;
+        left: 20px;
+        bottom: 200px;
+        /*margin-bottom: 400px;*/
+    }
+    .card-group {
+        margin-bottom: -300px;
+    }
 }

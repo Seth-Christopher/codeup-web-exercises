@@ -1,19 +1,13 @@
-// TO MAKE THE MAP APPEAR YOU MUST
- // ADD YOUR ACCESS TOKEN FROM
- // https://account.mapbox.com
+
  mapboxgl.accessToken = MAPBOX_API_KEY;
+const coordinates = document.querySelector('#coordinates');
  const map = new mapboxgl.Map({
      container: 'map',
-// Choose from Mapbox's core styles, or make your own style with Mapbox Studio
      style: 'mapbox://styles/mapbox/streets-v12',
      center: [-98.491125329, 29.42631],
      zoom: 11
  });
 
- /* Given a query in the form "lng, lat" or "lat, lng"
- * returns the matching geographic coordinate(s)
- * as search results in carmen geojson format,
- * https://github.com/mapbox/carmen/blob/master/carmen-geojson.md */
  const coordinatesGeocoder = function (query) {
 // Match anything which looks like
 // decimal degrees coordinate pair.
@@ -75,29 +69,34 @@
 
  <!--MARKER START  -->
 
-// Create a new marker.
-// const marker = new mapboxgl.Marker()
-//     .setLngLat([-98.491125329, 29.42631])
+// const marker = new mapboxgl.Marker({
+//     color: "rgba(14,14,14,0.44)",
+//     draggable: true
+// }).setLngLat([-98.49112532, 29.4231])
 //     .addTo(map);
+//
+// map.on('style.load', function() {
+//     map.on('click', function(e) {
+//         let coordinates =e.lngLat;
+//         new mapboxgl.Popup()
+//             .setLngLat(coordinates)
+//             .setHTML('you clicked here: <br/>' + coordinates)
+//             .addTo(map);
+//     });
+// });
+ const marker = new mapboxgl.Marker({
+     draggable: true
+ })
+     .setLngLat([-98.49112532, 29.4231])
+     .addTo(map);
 
-// Set marker options.
-const marker = new mapboxgl.Marker({
-    color: "rgba(14,14,14,0.44)",
-    draggable: true
-}).setLngLat([-98.49112532, 29.4231])
-    .addTo(map);
+ function onDragEnd() {
+     const lngLat = marker.getLngLat();
+     coordinates.style.display = 'block';
+     coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+ }
 
-map.on('style.load', function() {
-    map.on('click', function(e) {
-        let coordinates =e.lngLat;
-        new mapboxgl.Popup()
-            .setLngLat(coordinates)
-            .setHTML('you clicked here: <br/>' + coordinates)
-            .addTo(map);
-    });
-});
-
-
+ marker.on('dragend', onDragEnd);
 <!-- MARKER END -->
 
 <!-- ASSIGNING VARIABLES -->
