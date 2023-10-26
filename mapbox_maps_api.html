@@ -15,9 +15,27 @@
        header {
            text-align: center;
        }
+       body {
+           background-color: black;
+       }
         #map {
-            height: 500px;
+            margin: 40px auto;
+            height: 800px;
             width: 80%;
+            border: double 15px rgba(254, 254, 254, 0.7);
+            border-radius: 10px;
+        }
+        .restaurant-popup {
+            font-size: 25px;
+            text-decoration: underline;
+            padding: 5px;
+        }
+        div p {
+            font-weight: bold;
+        }
+        .p-popup {
+            padding: 4px;
+            font-size: 15px;
         }
     </style>
 </head>
@@ -37,19 +55,26 @@
         {
             name: "Bunz",
             longitude: -98.49293,
-            latitude: 29.42631
+            latitude: 29.42631,
+            food: "Gourmet Burgers",
+            ratings: "4.5 stars"
+
 
         },
         {
             name: "Domingo Restaurant",
             longitude: -98.491125320,
-            latitude: .42487931317373
+            latitude: .42487931317373,
+            food: "Gourmet Mexican Food",
+            ratings: "4.1 stars"
 
         },
         {
             name: "Pinkertons BBQ",
             longitude: -98.49411883188519,
-            latitude: 29.42752041601166
+            latitude: 29.42752041601166,
+            food: "Damn Good BBQ",
+            ratings: "4.7 stars"
 
         }
     ]
@@ -72,14 +97,18 @@
             .setLngLat(coords)
             .addTo(map);
         map.setCenter(coords);
-        const bunzPopUp = new mapboxgl.Popup().setHTML(`<h2>Bunz Handcrafted Burgers</h2>`)
+        map.setZoom(15)
+        const bunzPopUp = new mapboxgl.Popup().setHTML(`
+            <h2>Bunz Handcrafted Burgers</h2>
+            <img src="img/bbq.png" width="200px" height="150px">`)
         bunzMarker.setPopup(bunzPopUp)
     });
+
 
     restaurants.forEach((restaurant, index) => {
         if ( index === restaurant.length -1){
             map.setCenter([restaurant.longitude, restaurant.latitude]);
-            map.setZoom(10)
+            map.setZoom(11)
         }
         const marker = new mapboxgl.Marker()
         .setLngLat([restaurant.longitude, restaurant.latitude])
@@ -87,6 +116,9 @@
         const popup = new mapboxgl.Popup()
             .setHTML(`
                 <h2 class="restaurant-popup">${restaurant.name}</h2>
+                <img src="img/mexican-food.png" width="250px" height="150px">
+                <p class="p-popup">Type of Food: ${restaurant.food}</p>
+                <p class="p-popup">Ratings: ${restaurant.ratings}</p>
             `);
         marker.setPopup(popup);
 
