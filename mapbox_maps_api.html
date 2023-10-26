@@ -99,8 +99,10 @@
         map.setCenter(coords);
         map.setZoom(15)
         const bunzPopUp = new mapboxgl.Popup().setHTML(`
+           <img src="img/bbq.png" width="220px" height="150px">
             <h2>Bunz Handcrafted Burgers</h2>
-            <img src="img/bbq.png" width="200px" height="150px">`)
+
+            `)
         bunzMarker.setPopup(bunzPopUp)
     });
 
@@ -116,7 +118,7 @@
         const popup = new mapboxgl.Popup()
             .setHTML(`
                 <h2 class="restaurant-popup">${restaurant.name}</h2>
-                <img src="img/mexican-food.png" width="250px" height="150px">
+                <img src="img/mexican-food.png" width="220px" height="150px">
                 <p class="p-popup">Type of Food: ${restaurant.food}</p>
                 <p class="p-popup">Ratings: ${restaurant.ratings}</p>
             `);

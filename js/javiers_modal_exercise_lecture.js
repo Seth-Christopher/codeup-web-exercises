@@ -66,6 +66,7 @@ const addCardButton = document.querySelector("header button");
 const addCardSubmitButton = document.querySelector("div#addCardFormWrapper button");
 
 const editButtons = document.querySelectorAll("button.edit");
+const editCardSubmitButton = document.querySelector("#editCardForm").querySelector("button");
 
 const removeButtons = document.querySelectorAll("button.remove");
 
@@ -96,27 +97,26 @@ addCardSubmitButton.addEventListener('click', event => {
 });
 
 
-// function handleEditButtonClick(event){
-//     const cardElements = event.target.parentElement.children;
-//     for (let cardElement of cardElements) {
-//         cardElement.addEventListener('mouseenter', ()=> {
-//             cardElement.style.transform = "scale(1.2)";
-//             cardElement.style.backgroundColor = "rgba(91, 83, 83, 1.0)";
-//             cardElement.style.transition = "transform 0.4s ease-in, background-color 0.4s ease-in";
-//         });
-//         cardElement.addEventListener('mouseout', ()=> {
-//             cardElement.style.transform = "unset";
-//             cardElement.style.backgroundColor = "unset";
-//         });
-//     }
-// }
 
 function handleEditButtonClick(event){
+
+    const cardToEdit = event.target.parentElement;
+
     const modalWrapper = document.querySelector("#editCardModalWrapper");
     modalWrapper.classList.remove("hideModal");
     modalWrapper.classList.add("displayModal");
-}
 
+    const editCardForm = document.querySelector("#editCardForm");
+
+    const id = cardToEdit.dataset.id;
+    const title = cardToEdit.querySelector("h2").innerText;
+    const image = cardToEdit.querySelector("img").getAttribute("src");
+    const description = cardToEdit.querySelector("p").innerText;
+    editCardForm[1].value = title;
+    editCardForm[2].value = image;
+    editCardForm[3].value = description;
+    editCardForm[4].value = id;
+}
 window.addEventListener('click', event => {
     const modalWrapper = document.querySelector("#editCardModalWrapper");
     if (event.target === document.querySelector("#editCardModalWrapper")){
@@ -126,14 +126,24 @@ window.addEventListener('click', event => {
 });
 
 
-// document.querySelector("#gizmos").addEventListener('click', event=>{
-//     if (event.target.innerText === "Edit") {
-//         handleEditButtonClick(event);
-//     }
-// });
+
+
 
 editButtons.forEach(editButton => {
     editButton.addEventListener('click', handleEditButtonClick);
+});
+
+editCardSubmitButton.addEventListener('click', event => {
+    event.preventDefault();
+    const cardId = document.querySelector("#editCardId").value;
+    const newTitle = document.querySelector("#editCardTitle").value;
+    const newImageLink = document.querySelector("#editImageLink").value;
+    const newDescription = document.querySelector("#editImageDescription").value;
+    const cardToEdit = document.querySelector(`[data-id="${cardId}"]`);
+    cardToEdit.querySelector("h2").innerText = newTitle;
+    cardToEdit.querySelector("img").setAttribute("src", newImageLink);
+    cardToEdit.querySelector("p").innerText = newDescription;
+    document.querySelector("#editCardModalWrapper").click();
 });
 
 function handleRemoveButtonClick (event) {
