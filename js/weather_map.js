@@ -110,7 +110,7 @@ function updateWeatherForCards (lat, lng) {
                 const tempLow = parseInt(weather.main.temp_min);
                 const tempHigh = parseInt(weather.main.temp_max);
                 const feelsLike = parseInt(weather.main.feels_like);
-                const weatherDesc = (weather.weather[0].description);           // attempted to locate the weather description
+                const weatherDesc = (weather.weather[0].description);           //  to locate the weather description
                 console.log(weatherDesc);
 
                 if (index % 8 === 0){
@@ -129,5 +129,4 @@ function updateWeatherForCards (lat, lng) {
                 }
             })
         });
-
 }
