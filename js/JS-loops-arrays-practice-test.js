@@ -7,15 +7,29 @@ function sumOfStringLengths (strings) {
         console.log(sum.length);
     }
 }
-/* Write a function named findTheFirstNumber that accepts an array of any types and returns the index of the first element in the array that is a number. Use your isNumber function from problem 1. Return -1 if no number is in the array.
-console.log(findTheFirstNumber(["the", "big", 3, "pizza"])); // outputs 2
-console.log(findTheFirstNumber(["the", "big", "pizza"])); // outputs -1
-console.log(findTheFirstNumber([1, "x", 2, "y"])); // outputs 0 */
+/* Write a function named findTheFirstNumber that accepts an array of any types and returns the index of the first element in the array that is a number. Use your isNumber function from problem 1. Return -1 if no number is in the array.*/
+function isNumber (num) {
+   return typeof num === "number";
+}
+
+function findTheFirstNumber (array) {
+    return array.findIndex(isNumber);
+}
+// console.log(findTheFirstNumber(["the", "big", 3, "pizza"])); // outputs 2
+// console.log(findTheFirstNumber(["the", "big", "pizza"])); // outputs -1
+// console.log(findTheFirstNumber([1, "x", 2, "y"])); // outputs 0 */
 
 
 /* Write a function called makePerson that accepts two strings and a number as parameters and returns an object where the first string is the object's firstname field, the second string is the object's lastname field, and the number is the object's age field.
-console.log(makePerson("bob", "smith", 42));
-// outputs { firstname: 'bob', lastname: 'smith', age: 42 } */
+console.log(makePerson("bob", "smith", 42)); */
+function makePerson (str1, str2, num){
+    return (`FirstName: ${str1} , LastName: ${str2} . Age: ${num}`)
+}
+
+
+
+
+// outputs { firstname: 'bob', lastname: 'smith', age: 42 }
 
 /* Write a function named getFullName that accepts an object with the fields firstname and lastname. The function returns a concatenation of the firstname and lastname fields with a space between them.
 console.log(getFullName({
