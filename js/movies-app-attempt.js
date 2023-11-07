@@ -4,6 +4,7 @@
 // const APIURL = "https://www.omdbapi.com?apikey=${OMDB_API_KEY}&t=${title}";
 
 const movieCardsDiv = document.querySelector("#moviesDiv");
+let movies = [];
 
 // CODE BELOW WILL SEARCH MOVIE BY SPECIFIC TITLE FROM OMDB API-- could be used with search bar perhaps
 async function searchByTitle(movie) {
@@ -42,50 +43,17 @@ async function getMoviesByTitle(searchTerm) {
 
 getMoviesByTitle("The Hunger Games");
 
-//just attempting to create function that will show OMDB movielists
+function generateCard(movie){
+    const newCard = document.createElement("div");
+    newCard.classList.add('movie');
+    newCard.dataset.id = movie.id;
 
-// const IMGPATH = `http://img.omdbapi.com/?apikey=${OMDB_API_KEY}&`;
-// async function getMovies(searchTerm) {
-//     const APIURL = `https://www.omdbapi.com/?s=${searchTerm}&page=1&apikey=${OMDB_API_KEY}`;
-//     const resp = await fetch(APIURL);
-//     const respData = await resp.json();
-//     console.log(respData.Search);
+    const moviePoster = document.createElement("img");
+    moviePoster.src = movie.posterURL;
+    moviePoster.alt = movie.imgAlt;
+    newCard.appendChild(moviePoster);
 
-// respData.forEach(movie => {
-//     console.log(movie);
-//    const img = document.createElement('img');
-//    img.src = IMGPATH + movie.Poster;
-
-//    document.body.appendChild(img);
-// });
-//     return movie;
-// }
-// getMovies("Superman");
-
-
-// const MOVIE_HOST = "http://localhost:3000/movies";
-// async function updateDisplay() {
-//
-//     moviesDiv.innerHTML = "";
-//
-//     movies = await api.getAllMovies();
-//     for (let movie of movies) {
-//
-//         // Get poster for each movie
-//         await fetch(`http://omdbapi.com/?apikey=${OMDB_API_KEY}&t=${movie.title}`)
-//             .then(response => response.json())
-//             .then(data => {
-//                 posterURL = data.Poster;
-//             });
-//         poster = document.createElement("img");
-//         poster.srcset = posterURL;
-//     }
-//     export async function getAllMovies() {
-//         try {
-//             return fetch(`${MOVIE_HOST}/movies`)
-//                 .then(response => response.json());
-//         } catch(error) {
-//             console.error (error);
-//         }
-//     }}
-
+    const movieTitle = document.createElement("h2");
+    movieTitle.innerHTML = movie.title;
+    newCard.appendChild(movieTitle);
+}

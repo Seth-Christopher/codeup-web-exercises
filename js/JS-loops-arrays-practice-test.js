@@ -23,7 +23,9 @@ function findTheFirstNumber (array) {
 /* Write a function called makePerson that accepts two strings and a number as parameters and returns an object where the first string is the object's firstname field, the second string is the object's lastname field, and the number is the object's age field.
 console.log(makePerson("bob", "smith", 42)); */
 function makePerson (str1, str2, num){
-    return (`FirstName: ${str1} , LastName: ${str2} . Age: ${num}`)
+    makePerson.forEach(index => {
+        return (`FirstName: ${str1} , LastName: ${str2} . Age: ${num}`)
+    })
 }
 
 
