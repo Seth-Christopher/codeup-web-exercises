@@ -3,8 +3,7 @@
 
 // const APIURL = "https://www.omdbapi.com?apikey=${OMDB_API_KEY}&t=${title}";
 
-const movieCardsDiv = document.querySelector("#moviesDiv");
-let movies = [];
+
 
 // CODE BELOW WILL SEARCH MOVIE BY SPECIFIC TITLE FROM OMDB API-- could be used with search bar perhaps
 async function searchByTitle(movie) {
@@ -17,7 +16,7 @@ async function searchByTitle(movie) {
         })
 }
 
-searchByTitle({title: "Legends of the Fall"});
+searchByTitle({title: "The Matrix"});
 
 
 // CODE BELOW WILL SEARCH ALL MOVIES BY TITLE FROM OMDB API
@@ -41,19 +40,33 @@ async function getMoviesByTitle(searchTerm) {
 
 }
 
-getMoviesByTitle("The Hunger Games");
+getMoviesByTitle("Bad Boys").then(r =>{
+    const movieCardsDiv = document.querySelector("#moviesDiv");
 
-function generateCard(movie){
-    const newCard = document.createElement("div");
-    newCard.classList.add('movie');
-    newCard.dataset.id = movie.id;
+    function generateCard(movie){
+        const newCard = document.createElement("div");
+        newCard.classList.add('movie');
+        newCard.dataset.id = movie.id;
 
-    const moviePoster = document.createElement("img");
-    moviePoster.src = movie.posterURL;
-    moviePoster.alt = movie.imgAlt;
-    newCard.appendChild(moviePoster);
+        const moviePoster = document.createElement("img");
+        moviePoster.src = movie.posterURL;
+        moviePoster.alt = movie.imgAlt;
+        newCard.appendChild(moviePoster);
 
-    const movieTitle = document.createElement("h2");
-    movieTitle.innerHTML = movie.title;
-    newCard.appendChild(movieTitle);
-}
+        const movieTitle = document.createElement("h2");
+        movieTitle.innerText = movie.title;
+        newCard.appendChild(movieTitle);
+
+        const movieYear = document.createElement("p");
+        movieYear.innerText = movie.year;
+        newCard.appendChild(movieYear);
+
+        return newCard;
+    }
+
+} );
+
+
+<!-- VARIABLES AND CONSTANTS -->
+
+let movies = [];

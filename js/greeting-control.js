@@ -11,7 +11,7 @@ function main () {
 
 
 function greetUser () {
-    // 1. grab user name
+    // 1. grab username
     const userName = document.querySelector("#greet-name").value;
     // 2. call greeting
     const greeting = randomGreeting() + " " + userName;
