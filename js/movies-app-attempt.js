@@ -63,8 +63,8 @@ getMoviesByTitle("Bad Boys").then(r =>{
 
         return newCard;
     }
-
-} );
+}
+);
 
 
 <!-- VARIABLES AND CONSTANTS -->
