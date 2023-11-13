@@ -3,3 +3,19 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header h1 {
+    color: red;
+}
+
+#header ul {
+    display: flex;
+    justify-content: space-between;
+    width: 30%
+}
