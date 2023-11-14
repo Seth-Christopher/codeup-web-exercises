@@ -5,7 +5,7 @@
 
 
 
-// CODE BELOW WILL SEARCH MOVIE BY SPECIFIC TITLE FROM OMDB API-- could be used with search bar perhaps
+// CODE BELOW WILL SEARCH MOVIE BY  SPECIFIC TITLE FROM OMDB API-- could be used with search bar perhaps
 async function searchByTitle(movie) {
     const title = movie.title;
     return await fetch(`https://www.omdbapi.com?apikey=fe48eb2f&t=${title}`)
@@ -25,7 +25,7 @@ const IMGPATH = `http://img.omdbapi.com/?apikey="fe48eb2f"&`;
 //"Poster":"https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg
 
 async function getMoviesByTitle(searchTerm) {
-    const APIURL = `https://www.omdbapi.com/?s=${searchTerm}&page=&apikey=fe48eb2f`;
+    const APIURL = `https://www.omdbapi.com/?s=${searchTerm}&page=1&apikey=fe48eb2f`;
     const resp = await fetch(APIURL);
     const respData = await resp.json();
     console.log(respData.Search);
