@@ -54,9 +54,42 @@ bigSmall.addEventListener('mouseenter', () => {
 })
 
 // -7- Three seconds after the page loads, a paragraph with the content "Document Object Model" appears under the main heading in the header element.
+function timerForParagraph() {
+    let heading = document.querySelector("header");
 
-// -8- When the user's mouse enters the Codeup logo, the image changes from img/logo.png to img/OfficialCodeupLogo.png. Hint: modify the value of the src attribute.
+    let newP = document.createElement("p");
+    newP.innerText = "Document Object Model";
+    heading.appendChild(newP);
+}
+
+setTimeout(timerForParagraph, 3000);
+
+// -8- When the user's mouse enters the Codeup logo, the image changes from img/spurs.png to img/philly.eagles.png. Hint: modify the value of the src attribute.
+let imgChange = document.querySelector("#image img");
+imgChange.addEventListener("mouseenter", () => {
+    imgChange.src="img/philly.eagles.png";
+    imgChange.addEventListener('mouseleave', () => {
+        imgChange.src="img/bruce.lee.png";
+    })
+})
 
 // -9- When the user clicks on the last "Click Me" button, all the h2 elements in any section on the page start disappearing and reappearing every second.
+let lastClickBtn = document.querySelector("li:nth-child(5)");
+// console.log(lastClickBtn);
+lastClickBtn.addEventListener('click', () => {
+    let allH2s = document.querySelectorAll("h2");
+    allH2s.forEach(heading => {
+        if (heading.style.opacity !== '0') {
+            heading.style.transition = 'opacity 0.5s ease-in-out';
+            heading.style.opacity = '0';
+        } else {
+            heading.style.transition = 'opacity 0.5s ease-in-out';
+            heading.style.opacity = '1';
+        }
+        setInterval(heading, 1000);
+    })
+
+})
 
 // -10- When the user clicks on a Click Me button, the text in the corresponding paragraph with the text "Change Me" changes to "You changed me!". For example, if the first button is clicked, the first paragraph changes. If the second paragraph is clicked, the second paragraph changes, and so forth.
+let buttons = document.querySelectorAll("")
