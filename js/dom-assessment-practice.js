@@ -92,4 +92,3 @@ lastClickBtn.addEventListener('click', () => {
 })
 
 // -10- When the user clicks on a Click Me button, the text in the corresponding paragraph with the text "Change Me" changes to "You changed me!". For example, if the first button is clicked, the first paragraph changes. If the second paragraph is clicked, the second paragraph changes, and so forth.
-let buttons = document.querySelectorAll("")
