@@ -92,3 +92,11 @@ lastClickBtn.addEventListener('click', () => {
 })
 
 // -10- When the user clicks on a Click Me button, the text in the corresponding paragraph with the text "Change Me" changes to "You changed me!". For example, if the first button is clicked, the first paragraph changes. If the second paragraph is clicked, the second paragraph changes, and so forth.
+const buttons = document.querySelectorAll("section button:last-child");
+const paragraphs = document.querySelectorAll("ul p:last-child");
+
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', () => {
+        paragraphs[i].innerHTML = "You changed me!!!";
+    })
+}
