@@ -65,6 +65,13 @@
       "birthYear": 1819,
       "deathYear": 1891,
       "nationality": "American"
+    },
+    {
+      "id": 5,
+      "name": "George Orwell",
+      "birthYear": 1903,
+      "deathYear": 1950,
+      "nationality": "British"
     }
   ]
 }
