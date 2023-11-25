@@ -72,6 +72,13 @@
       "birthYear": 1903,
       "deathYear": 1950,
       "nationality": "British"
+    },
+    {
+      "id": 6,
+      "name": "fearless",
+      "birthYear": 1903,
+      "deathYear": 1950,
+      "nationality": "British"
     }
   ]
 }
