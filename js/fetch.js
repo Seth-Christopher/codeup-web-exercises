@@ -17,44 +17,46 @@ function getUsers () {
 
             loopingThroughUsers();
         })
-}
 
-function loopingThroughUsers (){
-    users.forEach(user => {
-        console.log(user);
-        let card = displayUserData(user);
-        // usersDiv.appendChild(card);
+
+    function loopingThroughUsers() {
+        users.forEach((user) => {
+            console.log(user);
+            let card = displayUserData(user);
+            // usersDiv.appendChild(card);
         })
     }
-getUsers();
-function displayUserData(user) {
-    // console.log(user);
-    // create a new card for each user
-    const newCard = document.createElement("div");
-    newCard.classList.add("user");
-    newCard.dataset.id = user.id;
 
-    // create elements for the id, nodeID, and user login
-    const userLogin =document.createElement("h4");
-    // userLogin.textContent = user.login;
+    // getUsers();
 
-    const userID = document.createElement("h5");
-    // userID.textContent = user.id;
-    const nodeID = document.createElement("h5");
-    // nodeID.textContent = user.node_id;
+    function displayUserData(user) {
+        // console.log(user);
+        // create a new card for each user
+        const newCard = document.createElement("div");
+        newCard.classList.add("user");
+        newCard.dataset.id = user.id;
+
+        // create elements for the id, nodeID, and user login
+        const userLogin = document.createElement("h4");
+        // userLogin.textContent = user.login;
+
+        const userID = document.createElement("h5");
+        // userID.textContent = user.id;
+        const nodeID = document.createElement("h5");
+        // nodeID.textContent = user.node_id;
 
 
-    // append the elements to the card
+        // append the elements to the card
 
-    newCard.appendChild(userLogin);
-    newCard.appendChild(userID);
-    newCard.appendChild(nodeID);
+        newCard.appendChild(userLogin);
+        newCard.appendChild(userID);
+        newCard.appendChild(nodeID);
 
-    // append the card to the usersDiv
-    usersDiv.appendChild(newCard);
+        // append the card to the usersDiv
+        usersDiv.appendChild(newCard);
+    }
 }
-displayUserData();
-
+getUsers();
 // const usersLogin = data.login;
 //
 // const usersDiv = document.querySelector("#users").innerHTML +=
