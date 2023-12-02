@@ -1,12 +1,19 @@
 /* Write a function named sumOfStringLengths that accepts an array of strings. The function returns the sum of the lengths of all the strings in the array.
 console.log(sumOfStringLengths([""])); // outputs 0
 console.log(sumOfStringLengths(["the", "big", "pizza"])); // outputs 11 */
-function sumOfStringLengths (strings) {
-    const sum = strings.join('');
-    {
-        console.log(sum.length);
+// function sumOfStringLengths (strings) {
+//     const sum = strings.join('');
+//     {
+//         console.log(sum.length);
+//     }
+// }
+function sumOfStringLengths (str) {
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+       return str.length;
     }
 }
+
 /* Write a function named findTheFirstNumber that accepts an array of any types and returns the index of the first element in the array that is a number. Use your isNumber function from problem 1. Return -1 if no number is in the array.*/
 function isNumber (num) {
    return typeof num === "number";
