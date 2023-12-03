@@ -52,6 +52,8 @@ i {
     height: 55%;
     border: 1px solid black;
     margin-top: 105px;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
 }
 
 @media only screen and (max-width: 600px) {
